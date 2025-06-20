@@ -1,3 +1,8 @@
+
+### Palavras reservadas
+
+![palavras_reservadas](https://github.com/igor-lourenco/java-17/blob/main/images/palavras_reservadas.png)
+
 Memória Heap
 
 - Onde fica armazenados os objetos instânciados e é gerenciada pelo Garbage Collector
