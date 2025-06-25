@@ -9,8 +9,12 @@ public class Main {
 
         imprimirUsoMemoria();
 
-        byte[] y = new byte[500 * 1024 * 1024]; // 500MB
+        x = null; // para tirar a referência da variável "x" do objeto instânciado acima e deixá-lo inalcançável para ser coletado pelo Garbage Collector
 
+
+        System.gc(); // Sugere que JVM se esforce para reciclar objetos não utilizados, a fim de disponibilizar a memória que eles ocupam para reutilização da JVM.
+
+//        byte[] y = new byte[10 * 1024 * 1024]; // 500MB
         imprimirUsoMemoria();
     }
 
