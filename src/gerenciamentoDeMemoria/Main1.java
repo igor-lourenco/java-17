@@ -1,6 +1,6 @@
 package gerenciamentoDeMemoria;
 
-public class Main {
+public class Main1 {
     public static void main(String[] args) {
 
         imprimirUsoMemoria();
@@ -9,8 +9,7 @@ public class Main {
 
         imprimirUsoMemoria();
 
-        x = null; // para tirar a referência da variável "x" do objeto instânciado acima e deixá-lo inalcançável para ser coletado pelo Garbage Collector
-
+        x = null; // para tirar a referência da variável "x" do objeto instânciado acima e deixá-lo inalcançável e elegível para ser coletado pelo Garbage Collector
 
         System.gc(); // Sugere que JVM se esforce para reciclar objetos não utilizados, a fim de disponibilizar a memória que eles ocupam para reutilização da JVM.
 
