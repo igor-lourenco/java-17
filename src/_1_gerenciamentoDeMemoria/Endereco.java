@@ -1,4 +1,4 @@
-package gerenciamentoDeMemoria;
+package _1_gerenciamentoDeMemoria;
 
 public class Endereco {
 

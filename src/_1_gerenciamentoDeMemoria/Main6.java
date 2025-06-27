@@ -1,4 +1,4 @@
-package gerenciamentoDeMemoria;
+package _1_gerenciamentoDeMemoria;
 
 import java.util.ArrayList;
 import java.util.List;

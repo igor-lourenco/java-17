@@ -1,19 +1,25 @@
-package gerenciamentoDeMemoria;
+package _1_gerenciamentoDeMemoria;
 
-public class Main4 {
+public class Main3 {
     public static void main(String[] args) {
 
         imprimirUsoMemoria();
 
-        new Cliente(); // não está sendo referenciado por nenhuma variável, assim ficando inalcançável e elegível para ser coletado pelo Garbage Collector
+        // as variáveis locais do método são eliminadas quando é encerrado o método, mas o objeto continua na Memória Heap
+        // assim ficando inalcançável e elegível para ser coletado pelo Garbage Collector
+        criarObjeto();
 
         imprimirUsoMemoria();
 
         System.gc(); // Sugere que JVM se esforce para reciclar objetos não utilizados, a fim de disponibilizar a memória que eles ocupam para reutilização da JVM.
 
         imprimirUsoMemoria();
+
     }
 
+    static void criarObjeto(){
+        byte[] x = new byte[500 * 1024 * 1024]; // 500MB
+    }
 
     static void imprimirUsoMemoria(){
 

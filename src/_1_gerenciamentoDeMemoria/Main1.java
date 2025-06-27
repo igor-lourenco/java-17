@@ -1,4 +1,4 @@
-package gerenciamentoDeMemoria;
+package _1_gerenciamentoDeMemoria;
 
 public class Main1 {
     public static void main(String[] args) {
