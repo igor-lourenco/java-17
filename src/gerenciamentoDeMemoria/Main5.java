@@ -1,7 +1,5 @@
 package gerenciamentoDeMemoria;
 
-import java.util.stream.Collector;
-
 public class Main5 {
     public static void main(String[] args) {
 
