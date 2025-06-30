@@ -10,7 +10,7 @@ public class Main {
 
         Pedido pedido = new Pedido();
 
-        Produto p1 = new Produto("Mouse", 100);
+        Produto p1 = new Produto("Mouse");
 
 //        p1.nome = "Teste";
 

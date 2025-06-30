@@ -7,10 +7,10 @@ public class Produto {
 
     static final int QUANTIDADE_ESTOQUE_INICIAL = 10;
 
-    String nome;
-    int quantidadeEstoque;
+    public  String nome;
+    public int quantidadeEstoque;
 
-    final String codigo; // Após inicializa no construtor, não pode ser modificada.
+    public final String codigo; // Após inicializa no construtor, não pode ser modificada.
 
     public Produto() {
         // chama o outro construtor da classe,
@@ -24,7 +24,7 @@ public class Produto {
     }
 
 
-    public Produto(String nome, int estoqueInicial){
+    private Produto(String nome, int estoqueInicial){
         Objects.requireNonNull(nome, "Nome nao pode ser nulo");
 
         if(estoqueInicial < 0) throw new IllegalArgumentException("Quantidade de estoque nao pode ser menor que zero");
