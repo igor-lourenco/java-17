@@ -1,21 +1,11 @@
-package _1_gerenciamentoDeMemoria;
+package com.java17._1_gerenciamentoDeMemoria;
 
-public class Main5 {
+public class Main4 {
     public static void main(String[] args) {
 
         imprimirUsoMemoria();
 
-        Cliente cliente = new Cliente();
-        Endereco endereco = new Endereco();
-
-        cliente.endereco = endereco;
-        endereco.cliente = cliente;
-
-        // Dessa forma os objetos criados perdem referencia, e entram em uma "ilha de isolamento" quando os objetos se referenciam, mas
-        // não são mais acessíveis por nenhuma thread em execução, variáveis ou registros de stack
-        // assim ficando inalcançável e elegível para ser coletado pelo Garbage Collector
-        cliente = null;
-        endereco = null;
+        new Cliente(); // não está sendo referenciado por nenhuma variável, assim ficando inalcançável e elegível para ser coletado pelo Garbage Collector
 
         imprimirUsoMemoria();
 

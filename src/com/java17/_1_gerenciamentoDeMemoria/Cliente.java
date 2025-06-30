@@ -1,4 +1,4 @@
-package _1_gerenciamentoDeMemoria;
+package com.java17._1_gerenciamentoDeMemoria;
 
 public class Cliente {
 

@@ -1,19 +1,19 @@
-package _1_gerenciamentoDeMemoria;
+package com.java17._1_gerenciamentoDeMemoria;
 
-public class Main1 {
+public class Main2 {
     public static void main(String[] args) {
 
         imprimirUsoMemoria();
 
         byte[] x = new byte[500 * 1024 * 1024]; // 500MB
+        byte[] y = new byte[500 * 1024 * 1024]; // 500MB
 
         imprimirUsoMemoria();
 
-        x = null; // para tirar a referência da variável "x" do objeto instânciado acima e deixá-lo inalcançável e elegível para ser coletado pelo Garbage Collector
+        x = y; // associa o 2° objeto referenciado pela variável "y" a "x", deixando o 1° objeto inalcançável e elegível para ser coletado pelo Garbage Collector
 
         System.gc(); // Sugere que JVM se esforce para reciclar objetos não utilizados, a fim de disponibilizar a memória que eles ocupam para reutilização da JVM.
 
-//        byte[] y = new byte[10 * 1024 * 1024]; // 500MB
         imprimirUsoMemoria();
     }
 

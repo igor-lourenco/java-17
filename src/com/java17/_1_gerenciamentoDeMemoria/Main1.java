@@ -1,24 +1,24 @@
-package _1_gerenciamentoDeMemoria;
+package com.java17._1_gerenciamentoDeMemoria;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Main6 {
+public class Main1 {
     public static void main(String[] args) {
 
         imprimirUsoMemoria();
 
-        List<Cliente> cliente = new ArrayList<>();
+        byte[] x = new byte[500 * 1024 * 1024]; // 500MB
 
-        // Para esgotar a Memória Heap, lança - OutOfMemoryError
-        while (true) {
-            cliente.add(new Cliente());
-            imprimirUsoMemoria();
-        }
+        imprimirUsoMemoria();
+
+        x = null; // para tirar a referência da variável "x" do objeto instânciado acima e deixá-lo inalcançável e elegível para ser coletado pelo Garbage Collector
+
+        System.gc(); // Sugere que JVM se esforce para reciclar objetos não utilizados, a fim de disponibilizar a memória que eles ocupam para reutilização da JVM.
+
+//        byte[] y = new byte[10 * 1024 * 1024]; // 500MB
+        imprimirUsoMemoria();
     }
 
 
-    static void imprimirUsoMemoria() {
+    static void imprimirUsoMemoria(){
 
         System.out.printf("\nMemoria maxima que a JVM pode usar: %s%n", emMegaBytes(Runtime.getRuntime().maxMemory()));
 
@@ -34,7 +34,7 @@ public class Main6 {
     }
 
 
-    static String emMegaBytes(long bytes) {
-        return String.format("%.2fMB", bytes / 1024d / 1024d);
+    static String emMegaBytes(long bytes){
+        return String.format("%.2fMB", bytes / 1024d / 1024d );
     }
 }

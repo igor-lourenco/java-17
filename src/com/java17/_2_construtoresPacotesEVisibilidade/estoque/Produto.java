@@ -1,4 +1,4 @@
-package _2_ConstrutoresPacotesEVisibilidade;
+package com.java17._2_construtoresPacotesEVisibilidade.estoque;
 
 import java.util.Objects;
 import java.util.UUID;

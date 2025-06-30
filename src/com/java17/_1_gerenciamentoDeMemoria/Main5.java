@@ -1,16 +1,23 @@
-package _1_gerenciamentoDeMemoria;
+package com.java17._1_gerenciamentoDeMemoria;
 
-public class Main2 {
+public class Main5 {
     public static void main(String[] args) {
 
         imprimirUsoMemoria();
 
-        byte[] x = new byte[500 * 1024 * 1024]; // 500MB
-        byte[] y = new byte[500 * 1024 * 1024]; // 500MB
+        Cliente cliente = new Cliente();
+        Endereco endereco = new Endereco();
+
+        cliente.endereco = endereco;
+        endereco.cliente = cliente;
+
+        // Dessa forma os objetos criados perdem referencia, e entram em uma "ilha de isolamento" quando os objetos se referenciam, mas
+        // não são mais acessíveis por nenhuma thread em execução, variáveis ou registros de stack
+        // assim ficando inalcançável e elegível para ser coletado pelo Garbage Collector
+        cliente = null;
+        endereco = null;
 
         imprimirUsoMemoria();
-
-        x = y; // associa o 2° objeto referenciado pela variável "y" a "x", deixando o 1° objeto inalcançável e elegível para ser coletado pelo Garbage Collector
 
         System.gc(); // Sugere que JVM se esforce para reciclar objetos não utilizados, a fim de disponibilizar a memória que eles ocupam para reutilização da JVM.
 
