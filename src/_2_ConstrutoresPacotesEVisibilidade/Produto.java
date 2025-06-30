@@ -1,6 +1,7 @@
 package _2_ConstrutoresPacotesEVisibilidade;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class Produto {
 
@@ -8,6 +9,8 @@ public class Produto {
 
     String nome;
     int quantidadeEstoque;
+
+    final String codigo; // Após inicializa no construtor, não pode ser modificada.
 
     Produto() {
         // chama o outro construtor da classe,
@@ -28,6 +31,7 @@ public class Produto {
 
         this.nome = nome;
         this.quantidadeEstoque = estoqueInicial;
+        this.codigo = UUID.randomUUID().toString();
     }
 
 }
