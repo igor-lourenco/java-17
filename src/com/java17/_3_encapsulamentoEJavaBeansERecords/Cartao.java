@@ -1,14 +1,16 @@
 package com.java17._3_encapsulamentoEJavaBeansERecords;
 
-public class Cartao {
+import java.io.Serializable;
 
+public class Cartao implements Serializable {
 
     public static final double TARIFA_DEPOSITO = 0.10;
     public static final double VALOR_MINIMO_DEPOSITO = 50;
 
-
     private String titular;
     private double saldo;
+
+    public Cartao() { }
 
     public Cartao(String titular){
         this.titular = titular;
@@ -16,6 +18,10 @@ public class Cartao {
 
     public String getTitular() {
         return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
     }
 
     public double getSaldo() {
