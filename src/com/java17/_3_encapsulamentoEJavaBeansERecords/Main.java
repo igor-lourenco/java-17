@@ -7,17 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /* Problemas da falta de encapsulamento:
-        *
-        * - Violação do princípio de responsabilidade única
-        * - Exposição de detalhes internos
-        * - Falta de controle na modificação dos dados
-        * - Dificuldade em aplicar validações e lógica
-        * - entre outros
-        * */
-
         var supermercado = new Estabelecimento("Supermercado do Zé");
         var cartao = new Cartao("Joao Green");
+
 
         var servicoDeDeposito = new ServicoDeDepositoPix();
         Recibo reciboDeposito = servicoDeDeposito.efetuaDeposito(cartao, 500);
@@ -31,8 +23,8 @@ public class Main {
 
 
         System.out.println();
-        System.out.printf("Titular: %s%n", cartao.titular);
-        System.out.printf("Saldo: R$%.2f%n", cartao.saldo);
+        System.out.printf("Titular: %s%n", cartao.getTitular());
+        System.out.printf("Saldo: R$%.2f%n", cartao.getSaldo());
 
     }
 }
