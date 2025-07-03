@@ -1,6 +1,6 @@
 package com.java17._4_heranca;
 
-import com.java17._4_heranca.banco.Conta;
+import com.java17._4_heranca.banco.ContaEspecial;
 import com.java17._4_heranca.banco.Titular;
 
 public class PrincipalContaEspecial {
@@ -8,11 +8,10 @@ public class PrincipalContaEspecial {
 
     public static void main(String[] args) {
 
-        Conta conta1 = new Conta();
+        ContaEspecial conta1 = new ContaEspecial();
         conta1.setTitular(new Titular("Joao Green", "12312312390"));
         conta1.setAgencia(1234);
         conta1.setNumero(987654);
-        conta1.setTipo(Conta.ESPECIAL);
         conta1.setLimiteChequeEspecial(1000);
         conta1.setTarifaMensal(90);
 

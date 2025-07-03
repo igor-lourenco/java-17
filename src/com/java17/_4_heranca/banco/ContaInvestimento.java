@@ -1,12 +1,13 @@
 package com.java17._4_heranca.banco;
 
-public class Conta {
+public class ContaInvestimento {
 
     private Titular titular;
     private int agencia;
     private int numero;
     private double saldo;
 
+    private double valorTotalRendimentos;
 
     public Titular getTitular() {
         return titular;
@@ -36,6 +37,7 @@ public class Conta {
         return saldo;
     }
 
+
     public void sacar(double valorSaque){
         if(valorSaque <= 0) throw new IllegalArgumentException("Valor do saque nao pode ser maior que zero");
 
@@ -50,6 +52,21 @@ public class Conta {
         saldo = saldo + valorDeposito;
     }
 
+    public double getValorTotalRendimentos() {
+        return valorTotalRendimentos;
+    }
+
+    public void creditarRendimentos(double percentualDeJuros){
+
+        double valorRendimentos = getSaldo() * percentualDeJuros / 100;
+        this.valorTotalRendimentos = this.valorTotalRendimentos + valorRendimentos;
+        depositar(valorRendimentos);
+    }
+
+    public void setValorTotalRendimentos(double valorTotalRendimentos) {
+        this.valorTotalRendimentos = valorTotalRendimentos;
+    }
+
     public void imprimirDemonstrativo(){
         System.out.println();
         System.out.printf("Agencia: %d%n", getAgencia());
@@ -57,4 +74,5 @@ public class Conta {
         System.out.printf("Titular: %s%n", getTitular().getNome());
         System.out.printf("Saldo: %.2f%n", getSaldo());
     }
+
 }
