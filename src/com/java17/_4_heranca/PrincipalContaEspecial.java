@@ -23,6 +23,8 @@ public class PrincipalContaEspecial {
         conta1.sacar(200);
         conta1.imprimirDemonstrativo();
 
+        System.out.println();
+        System.out.println(">>> Debitando a tarifa mensal da Conta Especial");
         conta1.debitarTarifaMensal();
         conta1.imprimirDemonstrativo();
 

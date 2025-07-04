@@ -21,6 +21,8 @@ public class PrincipalContaInvestimento {
         conta1.sacar(99);
         conta1.imprimirDemonstrativo();
 
+        System.out.println();
+        System.out.println(">>> Adicionando o creditar rendimentos da Conta Investimento:");
         conta1.creditarRendimentos(6);
         conta1.imprimirDemonstrativo();
     }
