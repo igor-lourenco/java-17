@@ -31,6 +31,15 @@ public class ContaEspecial extends ContaInvestimento{
         return getSaldo() + this.limiteChequeEspecial;
     }
 
+    @Override
+    public void sacar(double valorSaque) {
+        if(valorSaque <= 0) throw new IllegalArgumentException("Valor do saque nao pode ser maior que zero");
+
+        if(getSaldoDisponivel() < valorSaque) throw new RuntimeException("Saldo insuficiente para saque");
+
+        setSaldo(getSaldo() - valorSaque);
+    }
+
 
     @Override
     public void imprimirDemonstrativo() {
