@@ -8,10 +8,8 @@ public class PrincipalContaInvestimento {
 
     public static void main(String[] args) {
 
-        ContaInvestimento conta1 = new ContaInvestimento();
-        conta1.setTitular(new Titular("Joao Green", "12312312390"));
-        conta1.setAgencia(1234);
-        conta1.setNumero(987654);
+        Titular titular = new Titular("Joao Green", "12312312390");
+        ContaInvestimento conta1 = new ContaInvestimento(titular, 1234, 987654);
 
         conta1.imprimirDemonstrativo();
 

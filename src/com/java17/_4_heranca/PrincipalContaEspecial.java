@@ -8,13 +8,10 @@ public class PrincipalContaEspecial {
 
     public static void main(String[] args) {
 
-        ContaEspecial conta1 = new ContaEspecial();
-        conta1.setTitular(new Titular("Joao Green", "12312312390"));
-        conta1.setAgencia(1234);
-        conta1.setNumero(987654);
-        conta1.setLimiteChequeEspecial(1000);
-        conta1.setTarifaMensal(90);
+        Titular titular = new Titular("Joao Green", "12312312390");
+        ContaEspecial conta1 = new ContaEspecial(titular, 1234, 987654, 90);
 
+        conta1.setLimiteChequeEspecial(1000);
         conta1.imprimirDemonstrativo();
 
         conta1.depositar(100);
@@ -29,5 +26,4 @@ public class PrincipalContaEspecial {
         conta1.imprimirDemonstrativo();
 
     }
-
 }
