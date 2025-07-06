@@ -25,5 +25,6 @@ public class PrincipalContaEspecial {
         conta1.debitarTarifaMensal();
         conta1.imprimirDemonstrativo();
 
+        System.out.println(conta1);
     }
 }

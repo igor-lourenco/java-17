@@ -1,6 +1,8 @@
 package com.java17._4_heranca.banco;
 
-public class Conta {
+import java.io.Serializable;
+
+public class Conta implements Serializable {
 
     private Titular titular;
     private int agencia;
@@ -33,8 +35,8 @@ public class Conta {
         return saldo;
     }
 
-    public void sacar(double valorSaque){
-        if(valorSaque <= 0) throw new IllegalArgumentException("Valor do saque nao pode ser maior que zero");
+    public void sacar(double valorSaque) {
+        if (valorSaque <= 0) throw new IllegalArgumentException("Valor do saque nao pode ser maior que zero");
 
 
         validarSaldoParSaque(valorSaque);
@@ -42,21 +44,33 @@ public class Conta {
         saldo = saldo - valorSaque;
     }
 
-    protected void validarSaldoParSaque(double valorSaque){
-        if(getSaldo() < valorSaque) throw new RuntimeException("Saldo insuficiente para saque");
+    protected void validarSaldoParSaque(double valorSaque) {
+        if (getSaldo() < valorSaque) throw new RuntimeException("Saldo insuficiente para saque");
     }
 
-    public void depositar(double valorDeposito){
-        if(valorDeposito <= 0) throw new IllegalArgumentException("Valor do saque nao pode ser maior que zero");
+    public void depositar(double valorDeposito) {
+        if (valorDeposito <= 0) throw new IllegalArgumentException("Valor do saque nao pode ser maior que zero");
 
         saldo = saldo + valorDeposito;
     }
 
-    public void imprimirDemonstrativo(){
+    public void imprimirDemonstrativo() {
         System.out.println();
         System.out.printf("Agencia: %d%n", getAgencia());
         System.out.printf("Conta: %d%n", getNumero());
-        System.out.printf("Titular: %s%n", getTitular().getNome());
+        System.out.printf("Titular: %s%n", getTitular()!= null ? getTitular().getNome() : null);
         System.out.printf("Saldo: %.2f%n", getSaldo());
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder(this.getClass().getSimpleName());
+        sb.append("[");
+        sb.append("titular=").append(titular);
+        sb.append(", agencia=").append(agencia);
+        sb.append(", numero=").append(numero);
+        sb.append(", saldo=").append(saldo);
+        sb.append(']');
+        return sb.toString();
     }
 }

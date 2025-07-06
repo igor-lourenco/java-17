@@ -19,4 +19,18 @@ public class ContaInvestimento extends Conta {
         this.valorTotalRendimentos = this.valorTotalRendimentos + valorRendimentos;
         depositar(valorRendimentos);
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder(this.getClass().getSimpleName());
+        sb.append("[");
+        sb.append("titular=").append(getTitular());
+        sb.append(", agencia=").append(getAgencia());
+        sb.append(", numero=").append(getNumero());
+        sb.append(", saldo=").append(getSaldo());
+        sb.append(", valorTotalRendimentos=").append(valorTotalRendimentos);
+        sb.append(']');
+        return sb.toString();
+    }
+
 }

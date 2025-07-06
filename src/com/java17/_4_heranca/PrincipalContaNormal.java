@@ -8,7 +8,7 @@ public class PrincipalContaNormal {
 
     public static void main(String[] args) {
 
-        Titular titular = new Titular("Joao Green", "12312312390");
+        Titular titular = null;// new Titular("Joao Green", "12312312390");
         Conta conta1 = new Conta(titular, 1234, 987654);
 
         conta1.imprimirDemonstrativo();
@@ -18,6 +18,8 @@ public class PrincipalContaNormal {
 
         conta1.sacar(99);
         conta1.imprimirDemonstrativo();
+
+        System.out.println(conta1);
 
     }
 }

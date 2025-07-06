@@ -27,4 +27,12 @@ public class Titular {
         return cpf;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Titular[");
+        sb.append("nome='").append(nome).append('\'');
+        sb.append(", cpf='").append(cpf).append('\'');
+        sb.append(']');
+        return sb.toString();
+    }
 }

@@ -47,4 +47,17 @@ public class ContaEspecial extends ContaInvestimento{
         System.out.printf("Saldo disponivel: %.2f", getSaldoDisponivel());
         System.out.println();
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder(this.getClass().getSimpleName());
+        sb.append("[");
+        sb.append("titular=").append(getTitular());
+        sb.append(", agencia=").append(getAgencia());
+        sb.append(", numero=").append(getNumero());
+        sb.append(", saldo=").append(getSaldo());
+        sb.append(", saldoDisponivel=").append(getSaldoDisponivel());
+        sb.append(']');
+        return sb.toString();
+    }
 }
