@@ -1,6 +1,7 @@
 package com.java17._4_heranca.banco;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Conta implements Serializable {
 
@@ -72,5 +73,19 @@ public class Conta implements Serializable {
         sb.append(", saldo=").append(saldo);
         sb.append(']');
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+
+        Conta conta = (Conta) object;
+        return agencia == conta.agencia && numero == conta.numero;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(agencia, numero);
     }
 }
