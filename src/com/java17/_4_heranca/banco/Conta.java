@@ -16,26 +16,26 @@ public class Conta implements Serializable {
         this.numero = numero;
     }
 
-    public Titular getTitular() {
+    public final Titular getTitular() {
         return titular;
     }
 
 
-    public int getAgencia() {
+    public final int getAgencia() {
         return agencia;
     }
 
 
-    public int getNumero() {
+    public final int getNumero() {
         return numero;
     }
 
 
-    public double getSaldo() {
+    public final double getSaldo() {
         return saldo;
     }
 
-    public void sacar(double valorSaque) {
+    public final void sacar(double valorSaque) {
         if (valorSaque <= 0) throw new IllegalArgumentException("Valor do saque nao pode ser maior que zero");
 
 
@@ -48,7 +48,7 @@ public class Conta implements Serializable {
         if (getSaldo() < valorSaque) throw new RuntimeException("Saldo insuficiente para saque");
     }
 
-    public void depositar(double valorDeposito) {
+    public final void depositar(double valorDeposito) {
         if (valorDeposito <= 0) throw new IllegalArgumentException("Valor do saque nao pode ser maior que zero");
 
         saldo = saldo + valorDeposito;

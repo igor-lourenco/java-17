@@ -1,6 +1,6 @@
 package com.java17._4_heranca.banco;
 
-public class ContaEspecial extends ContaInvestimento{
+public final class ContaEspecial extends ContaInvestimento{
 
     private double tarifaMensal;
     private double limiteChequeEspecial;
