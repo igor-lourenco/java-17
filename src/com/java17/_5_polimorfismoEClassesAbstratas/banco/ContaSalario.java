@@ -31,4 +31,12 @@ public class ContaSalario extends Conta{
         sb.append(']');
         return sb.toString();
     }
+
+    @Override
+    public void imprimirDemonstrativo() {
+        super.imprimirDemonstrativo();
+
+        System.out.printf("Salario mensal: %.2f", getSalarioMensal());
+        System.out.println();
+    }
 }
