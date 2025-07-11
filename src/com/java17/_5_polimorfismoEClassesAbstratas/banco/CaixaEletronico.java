@@ -23,16 +23,10 @@ public class CaixaEletronico {
 
 //          instanceof pode ser o mesmo que = é uma
 //          conta é uma ContaInvestimento
-        if (conta instanceof ContaInvestimento) {
-            ContaInvestimento contaInvestimento = (ContaInvestimento) conta;
+        if (conta instanceof ContaInvestimento contaInvestimento
+                && contaInvestimento.getValorTotalRendimentos() > 0) {
 
-            if (contaInvestimento.getValorTotalRendimentos() > 0) {
-                System.out.println("Impressao do demonstrativo e gratuita para conta investimento que tenha rendimentos");
-            } else {
-                System.out.println();
-                System.out.printf("Custo da impressao: R$%.2f%n", TARIFA_IMPRESSAO_DEMONSTRATIVO);
-                conta.sacar(TARIFA_IMPRESSAO_DEMONSTRATIVO);
-            }
+            System.out.println("Impressao do demonstrativo e gratuita para conta investimento que tenha rendimentos");
 
         } else {
 

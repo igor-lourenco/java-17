@@ -40,7 +40,7 @@ public class PrincipalCaixaEletronico {
         contaInvestimento.depositar(100);
         contaInvestimento.creditarRendimentos(5.0);
 
-        caixaEletronico.imprimirDemonstrativo(contaSalario);
+        caixaEletronico.imprimirDemonstrativo(contaInvestimento);
 
     }
 }
