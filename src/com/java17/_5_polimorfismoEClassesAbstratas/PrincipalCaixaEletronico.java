@@ -1,9 +1,6 @@
 package com.java17._5_polimorfismoEClassesAbstratas;
 
-import com.java17._5_polimorfismoEClassesAbstratas.banco.CaixaEletronico;
-import com.java17._5_polimorfismoEClassesAbstratas.banco.ContaEspecial;
-import com.java17._5_polimorfismoEClassesAbstratas.banco.ContaSalario;
-import com.java17._5_polimorfismoEClassesAbstratas.banco.Titular;
+import com.java17._5_polimorfismoEClassesAbstratas.banco.*;
 
 public class PrincipalCaixaEletronico {
 
@@ -35,5 +32,15 @@ public class PrincipalCaixaEletronico {
 
         contaEspecial1.imprimirDemonstrativo();
         contaSalario.imprimirDemonstrativo();
+
+        System.out.println("--------------------------------------------------");
+
+        Titular titular4 = new Titular("John red", "12312312390");
+        ContaInvestimento contaInvestimento = new ContaInvestimento(titular4, 6789, 555555);
+        contaInvestimento.depositar(100);
+        contaInvestimento.creditarRendimentos(5.0);
+
+        caixaEletronico.imprimirDemonstrativo(contaSalario);
+
     }
 }

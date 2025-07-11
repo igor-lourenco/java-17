@@ -4,6 +4,7 @@ public class CaixaEletronico {
 
 
     public static final double TARIFA_TRANSFERENCIA = 10.0;
+    public static final double TARIFA_IMPRESSAO_DEMONSTRATIVO = 5.0;
 
     public void transferir(Conta contaOrigem, Conta contaDestino, double valorTransferencia){
 
@@ -18,4 +19,20 @@ public class CaixaEletronico {
     }
 
 
+    public void imprimirDemonstrativo(Conta conta) {
+
+        ContaInvestimento contaInvestimento = (ContaInvestimento) conta;
+
+        if (contaInvestimento.getValorTotalRendimentos() > 0) {
+            System.out.println("Impressao do demonstrativo e gratuita para conta investimento que tenha rendimentos");
+
+        } else {
+
+            System.out.println();
+            System.out.printf("Custo da impressao: R$%.2f%n", TARIFA_IMPRESSAO_DEMONSTRATIVO);
+            conta.sacar(TARIFA_IMPRESSAO_DEMONSTRATIVO);
+        }
+        conta.imprimirDemonstrativo();
+
+    }
 }
