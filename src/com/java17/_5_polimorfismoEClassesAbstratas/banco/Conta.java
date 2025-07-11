@@ -45,6 +45,10 @@ public class Conta implements Serializable {
         saldo = saldo - valorSaque;
     }
 
+    public boolean possuiGratuidadeDeImpressao(){
+        return false;
+    }
+
     protected void validarSaldoParSaque(double valorSaque) {
         if (getSaldo() < valorSaque) throw new RuntimeException("Saldo insuficiente para saque");
     }

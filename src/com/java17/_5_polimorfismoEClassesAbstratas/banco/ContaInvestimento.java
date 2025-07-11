@@ -21,6 +21,11 @@ public class ContaInvestimento extends Conta {
     }
 
     @Override
+    public boolean possuiGratuidadeDeImpressao() {
+        return getValorTotalRendimentos() > 0;
+    }
+
+    @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder(this.getClass().getSimpleName());
         sb.append("[");

@@ -27,6 +27,8 @@ public class PrincipalCaixaEletronico {
         contaEspecial1.imprimirDemonstrativo();
         contaEspecial2.imprimirDemonstrativo();
 
+        contaEspecial2.creditarRendimentos(5);
+
         System.out.println("--------------------------------------------------");
         caixaEletronico.transferir(contaEspecial1, contaSalario, 50);
 
@@ -40,7 +42,7 @@ public class PrincipalCaixaEletronico {
         contaInvestimento.depositar(100);
         contaInvestimento.creditarRendimentos(5.0);
 
-        caixaEletronico.imprimirDemonstrativo(contaInvestimento);
+        caixaEletronico.imprimirDemonstrativo(contaEspecial2);
 
     }
 }
