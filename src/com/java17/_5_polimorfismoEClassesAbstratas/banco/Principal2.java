@@ -1,6 +1,8 @@
-package com.java17._5_polimorfismoEClassesAbstratas;
+package com.java17._5_polimorfismoEClassesAbstratas.banco;
 
-import com.java17._5_polimorfismoEClassesAbstratas.banco.*;
+import com.java17._5_polimorfismoEClassesAbstratas.banco.entidades.Conta;
+import com.java17._5_polimorfismoEClassesAbstratas.banco.entidades.ContaSalario;
+import com.java17._5_polimorfismoEClassesAbstratas.banco.entidades.Titular;
 
 public class Principal2 {
 

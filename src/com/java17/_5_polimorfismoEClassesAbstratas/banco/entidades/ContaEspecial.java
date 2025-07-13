@@ -1,4 +1,4 @@
-package com.java17._5_polimorfismoEClassesAbstratas.banco;
+package com.java17._5_polimorfismoEClassesAbstratas.banco.entidades;
 
 public final class ContaEspecial extends ContaInvestimento {
 

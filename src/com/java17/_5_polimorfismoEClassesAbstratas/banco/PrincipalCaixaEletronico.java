@@ -1,6 +1,6 @@
-package com.java17._5_polimorfismoEClassesAbstratas;
+package com.java17._5_polimorfismoEClassesAbstratas.banco;
 
-import com.java17._5_polimorfismoEClassesAbstratas.banco.*;
+import com.java17._5_polimorfismoEClassesAbstratas.banco.entidades.*;
 
 public class PrincipalCaixaEletronico {
 
