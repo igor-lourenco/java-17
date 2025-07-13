@@ -13,6 +13,4 @@ public class GestorFiscal {
             System.out.println("------------------------");
         }
     }
-
-
 }

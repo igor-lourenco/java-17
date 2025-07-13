@@ -1,6 +1,8 @@
 package com.java17._5_polimorfismoEClassesAbstratas.faturamento.entidades;
 
-public abstract class NotaFiscal {
+import java.io.Serializable;
+
+public abstract class NotaFiscal implements Serializable {
 
     private String descricao;
     private double valorTotal;
@@ -11,9 +13,8 @@ public abstract class NotaFiscal {
     }
 
 
-    public double calcularImpostos(){
-        return 0.0;
-    }
+    public abstract double calcularImpostos();
+
 
     public void emitirNotaFiscal(){
         System.out.println();
