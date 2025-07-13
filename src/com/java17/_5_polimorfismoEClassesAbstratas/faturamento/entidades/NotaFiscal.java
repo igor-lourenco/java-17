@@ -1,6 +1,6 @@
 package com.java17._5_polimorfismoEClassesAbstratas.faturamento.entidades;
 
-public class NotaFiscal {
+public abstract class NotaFiscal {
 
     private String descricao;
     private double valorTotal;
@@ -11,12 +11,11 @@ public class NotaFiscal {
     }
 
 
-    protected double calcularImpostos(){
+    public double calcularImpostos(){
         return 0.0;
     }
 
     public void emitirNotaFiscal(){
-
         System.out.println();
         System.out.printf("Emitindo nota fiscal para: %s%n", getDescricao());
         System.out.printf("Valor total: %.2f%n", getValorTotal());
