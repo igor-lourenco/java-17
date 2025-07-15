@@ -14,7 +14,7 @@ public class ServicoContaPagar {
             throw new RuntimeException("Beneficiario nao possui chave pix");
         }
 
-        System.out.printf("%nDEBUG: Efetuando PIX para %s no valor de %.2f co chave %s%n",
+        System.out.printf("%nDEBUG: Efetuando PIX para %s no valor de %.2f com chave %s%n",
                 beneficiario.getNome(), documento.getValorTotal(), beneficiario.getChavePix());
 
 
