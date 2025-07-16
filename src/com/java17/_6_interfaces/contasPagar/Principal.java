@@ -3,13 +3,16 @@ package com.java17._6_interfaces.contasPagar;
 import com.java17._6_interfaces.contasPagar.modelo.Holerite;
 import com.java17._6_interfaces.contasPagar.modelo.OrdemServico;
 import com.java17._6_interfaces.contasPagar.pagamento.Beneficiario;
+import com.java17._6_interfaces.contasPagar.pagamento.MetodoPagamento;
+import com.java17._6_interfaces.contasPagar.pagamento.Transferencia;
 import com.java17._6_interfaces.contasPagar.servico.ServicoContaPagar;
 
 public class Principal {
 
     public static void main(String[] args) {
 
-        ServicoContaPagar servicoContaPagar = new ServicoContaPagar();
+        MetodoPagamento metodoPagamento = new Transferencia();
+        ServicoContaPagar servicoContaPagar = new ServicoContaPagar(metodoPagamento);
 
         Beneficiario beneficiario = new Beneficiario("Joao", "12345678900", "987654");
         Holerite holerite = new Holerite(beneficiario, 100, 168);
