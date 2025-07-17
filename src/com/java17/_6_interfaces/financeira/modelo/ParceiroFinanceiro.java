@@ -1,6 +1,6 @@
 package com.java17._6_interfaces.financeira.modelo;
 
-public class ParceiroFinanceiro extends Empresa{
+public class ParceiroFinanceiro extends Empresa {
 
     private double valorTotalAplicado;
 
