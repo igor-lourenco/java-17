@@ -1,12 +1,12 @@
 package com.java17._6_interfaces.financeira.servico;
 
-import com.java17._6_interfaces.financeira.modelo.EmpresaFinanciavel;
+import com.java17._6_interfaces.financeira.modelo.ClienteFinanciavel;
 
 public class ServicoFinanciamento {
 
 
-    public void solicitarFinanciamento(EmpresaFinanciavel empresa, double valorSolitado){
-        double limiteAprovado = empresa.calcularLimiteAprovado();
+    public void solicitarFinanciamento(ClienteFinanciavel clienteFinanciavel, double valorSolitado){
+        double limiteAprovado = clienteFinanciavel.calcularLimiteAprovado();
 
 
         if (limiteAprovado < valorSolitado){
@@ -20,11 +20,11 @@ public class ServicoFinanciamento {
     }
 
 
-    public double consultarLimiteAprovado(EmpresaFinanciavel empresa){
+    public double consultarLimiteAprovado(ClienteFinanciavel clienteFinanciavel){
 
         // Aqui poderia registrar a consulta em agum lugar para um consultor comercial entrar em
         // contato com o cliente por exemplo.
 
-        return empresa.calcularLimiteAprovado();
+        return clienteFinanciavel.calcularLimiteAprovado();
     }
 }

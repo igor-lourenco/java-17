@@ -1,16 +1,20 @@
 package com.java17._6_interfaces.financeira.modelo;
 
-public class Funcionario extends EmpresaFinanciavel {
+public class Funcionario  implements ClienteFinanciavel {
 
     public static final int QUANTIDADE_SALARIO_LIMITE_CREDITO = 5;
 
+    private String nome;
     private double salarioMensal;
 
     public Funcionario(String nome, double salarioMensal) {
-        super(nome, 0.0);
+        this.nome = nome;
         this.salarioMensal = salarioMensal;
     }
 
+    public String getNome() {
+        return nome;
+    }
 
     public double getSalarioMensal() {
         return salarioMensal;
