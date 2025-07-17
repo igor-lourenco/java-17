@@ -10,11 +10,6 @@ public abstract class Empresa {
         this.totalFaturamento = totalFaturamento;
     }
 
-
-    public double calcularJuros(double valorSolicitado){
-        return 0.0;
-    }
-
     public String getRazaoSocial() {
         return razaoSocial;
     }

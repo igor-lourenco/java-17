@@ -7,6 +7,7 @@ public class ServicoFinanciamento {
 
     public void solicitarFinanciamento(ClienteFinanciavel clienteFinanciavel, double valorSolitado){
         double limiteAprovado = clienteFinanciavel.calcularLimiteAprovado();
+        double jurosCalculado = clienteFinanciavel.calcularJuros(valorSolitado);
 
 
         if (limiteAprovado < valorSolitado){
@@ -16,7 +17,8 @@ public class ServicoFinanciamento {
 
         // Registraríamos a solicitação do financimento aqui em alguma classe de persistência de dados, etc
 
-        System.out.printf("DEBUG: Financiamento aprovado. Limite maximo de %.2f%n", limiteAprovado);
+        System.out.printf("DEBUG: Financiamento aprovado no valor de R$%.2f com juros de %.2f%%. Limite maximo de %.2f%n",
+                valorSolitado, jurosCalculado,  limiteAprovado);
     }
 
 
