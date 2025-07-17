@@ -10,7 +10,6 @@ public abstract class Empresa {
         this.totalFaturamento = totalFaturamento;
     }
 
-    public abstract double calcularLimiteAprovado();
 
     public double calcularJuros(double valorSolicitado){
         return 0.0;
