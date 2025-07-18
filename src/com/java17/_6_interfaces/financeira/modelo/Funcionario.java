@@ -1,6 +1,6 @@
 package com.java17._6_interfaces.financeira.modelo;
 
-public class Funcionario  implements ClienteFinanciavel, Bonificacao {
+public class Funcionario  implements Bonificacao {
 
     public static final int QUANTIDADE_SALARIO_LIMITE_CREDITO = 5;
 
