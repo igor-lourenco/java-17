@@ -2,6 +2,7 @@ package com.java17._6_interfaces.financeira;
 
 import com.java17._6_interfaces.financeira.modelo.*;
 import com.java17._6_interfaces.financeira.servico.ServicoFinanciamento;
+import com.java17._6_interfaces.financeira.servico.ServicoPagamentoBonus;
 
 public class Principal {
 
@@ -23,5 +24,15 @@ public class Principal {
         servicoFinanciamento.solicitarFinanciamento(fazenda, 3_000_000);
         servicoFinanciamento.solicitarFinanciamento(industria, 540_000);
         servicoFinanciamento.solicitarFinanciamento(funcionario, 90_000);
+
+        ClienteFinanciavel clienteFinanciavel = funcionario;
+        System.out.println("\nCalculando limite aprovado: " + clienteFinanciavel.calcularLimiteAprovado());
+
+        Bonificacao bonificacao = funcionario;
+        System.out.println("Calculando bonus: " + bonificacao.calcularBonus(80));
+
+
+        ServicoPagamentoBonus servicoPagamentoBonus = new ServicoPagamentoBonus();
+        servicoPagamentoBonus.pagar(funcionario, 80);
     }
 }

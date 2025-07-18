@@ -1,6 +1,6 @@
 package com.java17._6_interfaces.financeira.modelo;
 
-public class Funcionario  implements ClienteFinanciavel {
+public class Funcionario  implements ClienteFinanciavel, Bonificacao {
 
     public static final int QUANTIDADE_SALARIO_LIMITE_CREDITO = 5;
 
@@ -23,5 +23,10 @@ public class Funcionario  implements ClienteFinanciavel {
     @Override
     public double calcularLimiteAprovado() {
         return getSalarioMensal() * QUANTIDADE_SALARIO_LIMITE_CREDITO;
+    }
+
+    @Override
+    public double calcularBonus(double percentualMetaAlcancavel) {
+        return getSalarioMensal() * percentualMetaAlcancavel / 100;
     }
 }
