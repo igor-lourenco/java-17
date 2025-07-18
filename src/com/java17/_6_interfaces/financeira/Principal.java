@@ -1,9 +1,6 @@
 package com.java17._6_interfaces.financeira;
 
-import com.java17._6_interfaces.financeira.modelo.Fazenda;
-import com.java17._6_interfaces.financeira.modelo.Funcionario;
-import com.java17._6_interfaces.financeira.modelo.Industria;
-import com.java17._6_interfaces.financeira.modelo.ParceiroFinanceiro;
+import com.java17._6_interfaces.financeira.modelo.*;
 import com.java17._6_interfaces.financeira.servico.ServicoFinanciamento;
 
 public class Principal {
@@ -20,6 +17,9 @@ public class Principal {
         Funcionario funcionario = new Funcionario("Joao da Silva", 18_000);
 
         System.out.println();
+
+        System.out.println("Financiamento e de grande valor: " + ClienteFinanciavel.isFinanciamentoGrandeValor(500_000));
+
         servicoFinanciamento.solicitarFinanciamento(fazenda, 3_000_000);
         servicoFinanciamento.solicitarFinanciamento(industria, 540_000);
         servicoFinanciamento.solicitarFinanciamento(funcionario, 90_000);
