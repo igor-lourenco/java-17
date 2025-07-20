@@ -1,8 +1,6 @@
 package com.java17._7_boasPraticasDeHerancaEInterfaces.rigidezDoCodigoComHeranca;
 
-import com.java17._7_boasPraticasDeHerancaEInterfaces.rigidezDoCodigoComHeranca.locadora.Locacao;
-import com.java17._7_boasPraticasDeHerancaEInterfaces.rigidezDoCodigoComHeranca.locadora.LocacaoPorDiaSeguroItau;
-import com.java17._7_boasPraticasDeHerancaEInterfaces.rigidezDoCodigoComHeranca.locadora.Notebook;
+import com.java17._7_boasPraticasDeHerancaEInterfaces.rigidezDoCodigoComHeranca.locadora.*;
 
 public class Principal {
 
@@ -10,7 +8,11 @@ public class Principal {
 
         Notebook notebook = new Notebook("Macbook Pro i7 16gb", 5, 100);
 
-        Locacao locacao = new LocacaoPorDiaSeguroItau(notebook);
+        Precificacao precificacao = new PrecificacaoPorHora();
+        Seguro seguro = new SeguroItau();
+
+        Locacao locacao = new Locacao(notebook, precificacao, seguro);
+
         double valorDevido = locacao.calcularValorDevido(10);
 
         System.out.printf("%nValor a pagar: R$%.2f%n", valorDevido);
