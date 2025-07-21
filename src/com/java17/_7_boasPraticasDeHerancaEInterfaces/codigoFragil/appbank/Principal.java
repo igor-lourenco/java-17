@@ -7,7 +7,8 @@ public class Principal {
 
     public static void main(String[] args) {
 
-        Conta conta1 = new ContaComTributacao(new ContaCorrente());
+        ContaComPontuacaoDecorator contaComPontuacao = new ContaComPontuacaoDecorator(new ContaCorrente());
+        Conta conta1 = new ContaComTributacaoDecorator(contaComPontuacao);
         Conta conta2 = new ContaCorrente();
 
         conta1.depositar(1000.0);
@@ -17,5 +18,7 @@ public class Principal {
 
         System.out.printf("Saldo da conta 1: R$%.2f%n", conta1.getSaldo());
         System.out.printf("Saldo da conta 2: R$%.2f%n", conta2.getSaldo());
+        System.out.printf("Pontos da conta 1: %d%n", contaComPontuacao.getPontos());
+
     }
 }
