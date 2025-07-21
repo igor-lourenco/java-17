@@ -7,11 +7,11 @@ public class Principal {
 
     public static void main(String[] args) {
 
-        Conta conta1 = new ContaCorrenteComTributacao();
+        Conta conta1 = new ContaComTributacao(new ContaCorrente());
         Conta conta2 = new ContaCorrente();
 
         conta1.depositar(1000.0);
-//        conta1.sacar(100);
+        conta1.sacar(100);
         conta1.transferir(conta2, 100);
 //        conta1.aplicarEmInvestimento(100);
 
