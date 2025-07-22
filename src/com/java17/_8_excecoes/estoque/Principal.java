@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Principal {
 
     public static void main(String[] args) {
-
         Produto produto = new Produto("Apple Watch");
         produto.adicionarEstoque(10);
 
@@ -18,7 +17,7 @@ public class Principal {
 
     private static void comprar(Produto produto){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Quantidade: ");
+        System.out.print("Quantidade: ");
         int quantidade = scanner.nextInt();
 
         efetuarBaixaEstoque(produto, quantidade);
@@ -26,8 +25,11 @@ public class Principal {
     }
 
     private static void efetuarBaixaEstoque(Produto produto, int quantidade) {
-        produto.retirarEstoque(quantidade);
-        System.out.printf("%d unidades retiradas do estoque. Estoque atual: %d%n",
-                quantidade, produto.getQuantidadeEstoque());
+        try {
+            produto.retirarEstoque(quantidade);
+            System.out.printf("%d unidades retiradas do estoque. Estoque atual: %d%n",quantidade, produto.getQuantidadeEstoque());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro ao efetuar baixa no estoque: " + e.getMessage());
+        }
     }
 }
