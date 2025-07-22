@@ -10,7 +10,7 @@ public class Principal {
         Produto produto = new Produto("Apple Watch");
         produto.adicionarEstoque(10);
 
-        produto.ativar();
+//        produto.ativar();
 
         comprar(produto);
     }
@@ -28,9 +28,22 @@ public class Principal {
 
                 break;
             } catch (IllegalArgumentException e) {
-                e.printStackTrace(System.out); // Usando a saida padrão em vez da saida de erro
+//                e.printStackTrace(System.out); // Usando a saida padrão em vez da saida de erro
                 System.out.println("Erro na compra: " + e.getMessage());
+            } catch (IllegalStateException e) {
+//                e.printStackTrace(System.out); // Usando a saida padrão em vez da saida de erro
+                System.out.println("Erro na compra: " + e.getMessage());
+
+                System.out.print("Deseja ativar o produto? ");
+                if(scanner.nextBoolean()){
+                    produto.ativar();
+                    System.out.println("Ok, produto ativado");
+                }else{
+                    System.out.println("Ok. Compra nao pode ser realizada");
+                    break;
+                }
             }
+
         } while (true);
 
     }
