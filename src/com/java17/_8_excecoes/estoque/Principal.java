@@ -1,5 +1,7 @@
 package com.java17._8_excecoes.estoque;
 
+import com.java17._8_excecoes.estoque.exceptions.ProdutoInativoException;
+import com.java17._8_excecoes.estoque.exceptions.ProdutoSemEstoqueException;
 import com.java17._8_excecoes.estoque.modelo.Produto;
 
 import java.util.Scanner;
@@ -30,7 +32,9 @@ public class Principal {
             } catch (IllegalArgumentException e) {
 //                e.printStackTrace(System.out); // Usando a saida padrão em vez da saida de erro
                 System.out.println("Erro na compra: " + e.getMessage());
-            } catch (IllegalStateException e) {
+            } catch (ProdutoSemEstoqueException e){
+                System.out.println("Erro na compra: " + e.getMessage());
+            } catch (ProdutoInativoException e) {
 //                e.printStackTrace(System.out); // Usando a saida padrão em vez da saida de erro
                 System.out.println("Erro na compra: " + e.getMessage());
 
