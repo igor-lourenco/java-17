@@ -1,5 +1,6 @@
 package com.java17._8_excecoes.estoque;
 
+import com.java17._8_excecoes.estoque.exceptions.ProdutoException;
 import com.java17._8_excecoes.estoque.exceptions.ProdutoInativoException;
 import com.java17._8_excecoes.estoque.exceptions.ProdutoSemEstoqueException;
 import com.java17._8_excecoes.estoque.modelo.Produto;
@@ -47,6 +48,9 @@ public class Principal {
                     System.out.println("Ok. Compra nao pode ser realizada");
                     break;
                 }
+            }catch (ProdutoException e){
+                System.out.println(e.getClass().getName());
+                System.out.println("Erro na compra: " + e.getMessage());
             }
 
         } while (true);
