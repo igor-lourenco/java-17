@@ -60,7 +60,7 @@ public class Produto {
         }
 
         if(getQuantidadeEstoque() - quantidade < 0){
-            throw new ProdutoSemEstoqueException("Quantidade invalida, porque estoque ficaria negativo");
+            throw new ProdutoSemEstoqueException("Estoque insuficiente", this.quantidadeEstoque, quantidade);
         }
 
         this.quantidadeEstoque -= quantidade;

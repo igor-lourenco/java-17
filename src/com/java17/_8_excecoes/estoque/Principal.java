@@ -33,12 +33,13 @@ public class Principal {
 //                e.printStackTrace(System.out); // Usando a saida padrão em vez da saida de erro
                 System.out.println("Erro na compra: " + e.getMessage());
             } catch (ProdutoSemEstoqueException e){
-                System.out.println("Erro na compra: " + e.getMessage());
+                System.out.printf("Erro na compra: %s . Estoque disponivel: %d. Estoque necessario: %d%n",
+                        e.getMessage(), e.getEstoqueDisponivel(), e.getEstoqueNecessario());
             } catch (ProdutoInativoException e) {
 //                e.printStackTrace(System.out); // Usando a saida padrão em vez da saida de erro
                 System.out.println("Erro na compra: " + e.getMessage());
-
                 System.out.print("Deseja ativar o produto? ");
+
                 if(scanner.nextBoolean()){
                     produto.ativar();
                     System.out.println("Ok, produto ativado");
