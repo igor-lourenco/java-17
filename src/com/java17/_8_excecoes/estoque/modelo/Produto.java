@@ -48,7 +48,7 @@ public class Produto {
     }
 
 
-    public void retirarEstoque(int quantidade){
+    public void retirarEstoque(int quantidade) throws ProdutoSemEstoqueException, ProdutoInativoException {
         if(quantidade < 0){
             throw  new IllegalArgumentException(String.format(
                 "Quantidade nao pode ser negativa para retirada no estoque: %d", quantidade));

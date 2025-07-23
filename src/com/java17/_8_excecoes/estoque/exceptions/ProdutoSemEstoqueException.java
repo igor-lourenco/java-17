@@ -1,6 +1,6 @@
 package com.java17._8_excecoes.estoque.exceptions;
 
-public class ProdutoSemEstoqueException extends RuntimeException{
+public class ProdutoSemEstoqueException extends Exception{
 
     private final int estoqueDisponivel;
     private final int estoqueNecessario;
