@@ -42,10 +42,7 @@ public class Principal {
         try {
             produto.retirarEstoque(quantidade);
             System.out.printf("%d unidades retiradas do estoque. Estoque atual: %d%n",quantidade, produto.getQuantidadeEstoque());
-        } catch (IllegalArgumentException e){
-            System.out.println("Erro ao efetuar baixa no estoque: " + e.getMessage());
-            throw new BaixaEstoqueException("Erro ao realizar baixa no estoque", e);
-        } catch (ProdutoException e) {
+        } catch (IllegalArgumentException | ProdutoException e){
             System.out.println("Erro ao efetuar baixa no estoque: " + e.getMessage());
             throw new BaixaEstoqueException("Erro ao realizar baixa no estoque", e);
         }
