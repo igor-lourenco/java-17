@@ -1,6 +1,7 @@
 package com.java17._9_generics.estruturaDeDados;
 
 import com.java17._9_generics.estruturaDeDados.estrutura.Colecao;
+import com.java17._9_generics.estruturaDeDados.estrutura.Fila;
 import com.java17._9_generics.estruturaDeDados.estrutura.Pilha;
 import com.java17._9_generics.estruturaDeDados.modelo.Produto;
 
@@ -32,16 +33,22 @@ public class Principal {
 
         retirarTodos(colecao);
 
+        Colecao<String> nomes = new Fila<>();
+        nomes.colocar("Joao");
+        nomes.colocar("Maria");
+        nomes.colocar("Jose");
+
+        retirarTodos(nomes);
     }
 
 
-    public static void retirarTodos(Colecao<Produto> produtos) {
+    public static void retirarTodos(Colecao<?> objetos) {
 
         try {
             int i = 1;
             while (true) {
-                Produto produto = produtos.retirar();
-                System.out.printf("%d. %s%n", i, produto.getDescricao());
+                Object objeto = objetos.retirar();
+                System.out.printf("%d. %s%n", i, objeto);
                 i++;
             }
 

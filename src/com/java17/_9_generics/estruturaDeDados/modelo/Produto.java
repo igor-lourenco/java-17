@@ -11,4 +11,12 @@ public class Produto {
     public String getDescricao() {
         return descricao;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Produto{");
+        sb.append("descricao='").append(descricao).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }
