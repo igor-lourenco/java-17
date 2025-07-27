@@ -1,0 +1,29 @@
+package com.java17._9_generics.desafio.estoque;
+
+public class Carro implements Estocavel{
+
+    private String modelo;
+    private int quantidadeEstoque;
+
+    public Carro(String modelo, int quantidadeEstoque) {
+        this.modelo = modelo;
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    @Override
+    public int getQuantidadeEstoque() {
+        return quantidadeEstoque;
+    }
+
+    public void setQuantidadeEstoque(int quantidadeEstoque) {
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+}
