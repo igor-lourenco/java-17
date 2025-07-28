@@ -3,6 +3,8 @@ package com.java17._10_collectionsFramework.list.arrayList;
 import com.java17._10_collectionsFramework.list.arrayList.agencia.CadastroHotel;
 import com.java17._10_collectionsFramework.list.arrayList.agencia.Hotel;
 
+import java.util.ArrayList;
+
 public class Principal {
 
     public static void main(String[] args) {
@@ -19,6 +21,18 @@ public class Principal {
 
         Hotel hotel = (Hotel) cadastroHotel.obterTodos().get(2);
         System.out.println(hotel);
+
+        System.out.println("Todos os Hoteis:");
+        imprimirHoteis(cadastroHotel.obterTodos());
+
+    }
+
+    private static void imprimirHoteis(ArrayList hoteis) {
+        for (int i = 0; i < hoteis.size(); i++) {
+            Hotel hotel = (Hotel) hoteis.get(i);
+
+            System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(), hotel.getCidade(), hotel.getPrecoDiaria());
+        }
     }
 
 }
