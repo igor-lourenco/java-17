@@ -35,6 +35,20 @@ public class Principal {
         int lastIndexOf = hoteis.lastIndexOf(new Hotel("Mercure", "Uberlandia/MG", 400));
         System.out.println("Indice comecando fim ate o comeco: " + lastIndexOf);
 
+
+        System.out.println("Substituindo objeto: ");
+        hoteis.set(0, new Hotel("Novo Hotel", "Uberlandia/MG", 400));
+        System.out.println("\nTodos os Hoteis:");
+        imprimirHoteis(hoteis);
+
+
+        System.out.println("\nRemovendo por cidade: Fortin/CE");
+        cadastroHotel.removerPorCidade("Fortin/CE");
+        imprimirHoteis(hoteis);
+
+        System.out.println("\nRemovendo hotel: Mercure");
+        cadastroHotel.remover(new Hotel("Mercure", "Uberlandia/MG", 400));
+        imprimirHoteis(hoteis);
     }
 
     private static void imprimirHoteis(ArrayList<Hotel> hoteis) {
