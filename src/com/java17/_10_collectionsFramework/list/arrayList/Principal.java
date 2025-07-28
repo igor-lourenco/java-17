@@ -23,13 +23,15 @@ public class Principal {
         System.out.println(hotel);
 
         System.out.println("Todos os Hoteis:");
-        imprimirHoteis(cadastroHotel.obterTodos());
+        ArrayList<Hotel> hoteis = cadastroHotel.obterTodos();
+//        hoteis.add("Hotel")
+        imprimirHoteis(hoteis);
 
     }
 
-    private static void imprimirHoteis(ArrayList hoteis) {
+    private static void imprimirHoteis(ArrayList<Hotel> hoteis) {
         for (int i = 0; i < hoteis.size(); i++) {
-            Hotel hotel = (Hotel) hoteis.get(i);
+            Hotel hotel = hoteis.get(i);
 
             System.out.printf("%s (%s) -> %.2f%n", hotel.getNome(), hotel.getCidade(), hotel.getPrecoDiaria());
         }
