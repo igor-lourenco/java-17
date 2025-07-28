@@ -4,6 +4,7 @@ import com.java17._10_collectionsFramework.list.arrayList.exception.HotelJaExist
 import com.java17._10_collectionsFramework.list.arrayList.exception.HotelNaoEncontradoException;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CadastroHotel {
 
@@ -35,6 +36,20 @@ public class CadastroHotel {
         this.hoteis.removeAll(hoteisParaRemocao);
     }
 
+
+    public void removerUsandoIterator(String cidade){
+        Iterator<Hotel> hotelIterator = hoteis.iterator();
+
+        while (hotelIterator.hasNext()) {
+            Hotel hotel = hotelIterator.next();
+
+            if (hotel.getCidade().equals(cidade)){
+                System.out.printf("DEBUG: Removendo hotel: %s da cidade: %s%n", hotel.getNome(), hotel.getCidade());
+                hotelIterator.remove(); // remove o ultimo elemento retornado pelo iterator
+            }
+
+        }
+    }
 
     public void remover(Hotel hotel){
         boolean removido = hoteis.remove(hotel);
