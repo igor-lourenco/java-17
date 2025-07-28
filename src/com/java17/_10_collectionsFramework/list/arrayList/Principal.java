@@ -15,6 +15,7 @@ public class Principal {
         cadastroHotel.adicionar("Hotel Fazenda Dona Carolina", "Fortin/CE", 1400);
         cadastroHotel.adicionar("Tivoli Ecoresort", "Praia do Forte/BA", 1500);
         cadastroHotel.adicionar("Mercure", "Uberlandia/MG", 400);
+//        cadastroHotel.adicionar("Mercure", "Uberlandia/MG", 400);
 
 
 //        System.out.println(cadastroHotel.obterTodos());
@@ -22,10 +23,17 @@ public class Principal {
         Hotel hotel = (Hotel) cadastroHotel.obterTodos().get(2);
         System.out.println(hotel);
 
-        System.out.println("Todos os Hoteis:");
         ArrayList<Hotel> hoteis = cadastroHotel.obterTodos();
 //        hoteis.add("Hotel")
+        System.out.println("Todos os Hoteis:");
         imprimirHoteis(hoteis);
+
+
+        int indexOf = hoteis.indexOf(new Hotel("Mercure", "Uberlandia/MG", 400));
+        System.out.println("\nIndice comecando do inicio ate o fim: " + indexOf);
+
+        int lastIndexOf = hoteis.lastIndexOf(new Hotel("Mercure", "Uberlandia/MG", 400));
+        System.out.println("Indice comecando fim ate o comeco: " + lastIndexOf);
 
     }
 
