@@ -58,4 +58,8 @@ public class CadastroHotel {
         if (!removido) throw new HotelNaoEncontradoException("Hotel nao encontrado para remocao!");
     }
 
+    public Hotel[] obterTodosComArray (){
+        return hoteis.toArray(new Hotel[0]);
+    }
+
 }
