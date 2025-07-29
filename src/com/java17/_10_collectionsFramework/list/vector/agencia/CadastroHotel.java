@@ -5,6 +5,7 @@ import com.java17._10_collectionsFramework.list.arrayList.exception.HotelNaoEnco
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Vector;
 
 public class CadastroHotel {
@@ -60,6 +61,10 @@ public class CadastroHotel {
 
     public Hotel[] obterTodosComArray (){
         return hoteis.toArray(new Hotel[0]);
+    }
+
+    public List<Hotel> obterTodosComList (){
+        return hoteis.stream().toList();
     }
 
 }

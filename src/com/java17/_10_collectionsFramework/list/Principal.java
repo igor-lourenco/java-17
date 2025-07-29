@@ -3,7 +3,7 @@ package com.java17._10_collectionsFramework.list;
 import com.java17._10_collectionsFramework.list.vector.agencia.CadastroHotel;
 import com.java17._10_collectionsFramework.list.vector.agencia.Hotel;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Principal {
 
@@ -18,6 +18,31 @@ public class Principal {
 
 
         convertendoListaParaArray(cadastroHotel);
+
+        List<Integer> numeros = new ArrayList<>();
+        numeros.add(10);
+        numeros.add(8);
+        numeros.add(25);
+        numeros.add(57);
+        numeros.add(40);
+        numeros.add(83);
+
+        System.out.println();
+        ordemNatural(numeros);
+
+        System.out.println();
+        ordemNaturalHoteis(cadastroHotel);
+    }
+
+    private static void ordemNaturalHoteis(CadastroHotel cadastroHotel) {
+        Hotel[] hoteis = cadastroHotel.obterTodosComArray();
+        Collections.sort(numeros, Comparator.reverseOrder());
+        System.out.println(numeros);
+    }
+
+    private static void ordemNatural( List<Integer> numeros) {
+        Collections.sort(numeros, Comparator.reverseOrder());
+        System.out.println(numeros);
     }
 
     private static void convertendoListaParaArray(CadastroHotel cadastroHotel) {
