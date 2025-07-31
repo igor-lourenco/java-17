@@ -1,5 +1,6 @@
 package com.java17._10_collectionsFramework.list.vector.agencia;
 
+import com.java17._10_collectionsFramework.list.PrecoHotelComparator;
 import com.java17._10_collectionsFramework.list.arrayList.exception.HotelJaExistenteException;
 import com.java17._10_collectionsFramework.list.arrayList.exception.HotelNaoEncontradoException;
 
@@ -64,8 +65,19 @@ public class CadastroHotel {
         return hoteis.stream().toList();
     }
 
-    public void ordenar(){
+    public void ordenarPeloNomeUsandoComparable(){
         Collections.sort(this.hoteis);
+    }
+
+    public void ordenarPeloPrecoUsandoComparator(){
+        this.hoteis.sort(new PrecoHotelComparator() // 1º ordenação pelo preco
+            .reversed() // reverte a ordenação
+            .thenComparing(
+                Comparator.naturalOrder() // 2° ordenação pelo nome implementado no compareTo() da classe Hotel, caso tenha preços iguais
+            ));
+
+//        Outra forma diferente
+//        Collections.sort(this.hoteis, new PrecoHotelComparator());
     }
 
 }
