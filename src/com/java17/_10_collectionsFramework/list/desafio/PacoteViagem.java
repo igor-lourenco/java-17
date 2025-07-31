@@ -1,63 +1,32 @@
 package com.java17._10_collectionsFramework.list.desafio;
 
-import java.util.Objects;
+public class PacoteViagem extends Pacote{
 
-public class PacoteViagem implements Comparable<PacoteViagem>{
+    private int dias;
 
-    private String descricao;
-    private double precoPorPessoa;
-
-    public PacoteViagem(String descricao, double precoPorPessoa) {
-        Objects.nonNull(descricao);
-
-        if(precoPorPessoa < 0){
-            throw new IllegalArgumentException("Preço por pessoa não pode ser negativo");
-        }
-
-        this.descricao = descricao;
-        this.precoPorPessoa = precoPorPessoa;
+    public PacoteViagem() {
     }
 
-    public String getDescricao() {
-        return descricao;
+    public PacoteViagem(String descricao, Double precoPorPessoa) {
+        super(descricao, precoPorPessoa);
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public int getDias() {
+        return dias;
     }
 
-    public double getPrecoPorPessoa() {
-        return precoPorPessoa;
-    }
-
-    public void setPrecoPorPessoa(double precoPorPessoa) {
-        this.precoPorPessoa = precoPorPessoa;
+    public void setDias(int dias) {
+        this.dias = dias;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("PacoteViagem{");
-        sb.append("descricao='").append(descricao).append('\'');
-        sb.append(", precoPorPessoa=").append(precoPorPessoa);
+        final StringBuilder sb = new StringBuilder(this.getClass().getSimpleName());
+        sb.append('{');
+        sb.append("descricao='").append(getDescricao()).append('\'');
+        sb.append(", precoPorPessoa=").append(getPrecoPorPessoa());
+        sb.append(", dias=").append(getDias());
         sb.append('}');
         return sb.toString();
-    }
-
-    @Override
-    public int compareTo(PacoteViagem obj) {
-        return this.descricao.compareTo(obj.getDescricao());
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        PacoteViagem that = (PacoteViagem) object;
-        return Objects.equals(descricao, that.descricao);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(descricao);
     }
 }

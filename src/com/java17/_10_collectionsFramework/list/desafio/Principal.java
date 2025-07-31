@@ -4,15 +4,15 @@ import java.util.List;
 
 public class Principal {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        CadastroPacoteViagem cadastro = new CadastroPacoteViagem();
-        cadastro.adicionar("Istambul e Capadocia (20 noites)", 18_000);
-        cadastro.adicionar("Neve de Bariloche (10 noites)", 11_000);
-        cadastro.adicionar("Disney (10 noites)", 20_000);
-        cadastro.adicionar("Natal Luz em Gramado (5 noites)", 8_500);
-        cadastro.adicionar("Foz do Iguacu (20 noites)", 20_000);
-        
+        CadastroPacoteViagem<PacoteViagem> cadastro = new CadastroPacoteViagem<>();
+        cadastro.adicionar(new PacoteViagem("Istambul e Capadocia (20 noites)", 18_000d));
+        cadastro.adicionar(new PacoteViagem("Neve de Bariloche (10 noites)", 11_000d));
+        cadastro.adicionar(new PacoteViagem("Disney (10 noites)", 20_000d));
+        cadastro.adicionar(new PacoteViagem("Natal Luz em Gramado (5 noites)", 8_500d));
+        cadastro.adicionar(new PacoteViagem("Foz do Iguacu (20 noites)", 20_000d));
+
         System.out.println();
         System.out.println("Removendo por descricao:");
         cadastro.removerPorDescricao("Disney (10 noites)");
@@ -29,15 +29,15 @@ public class Principal {
         cadastro.ordenarPorPrecoDecrescente();
         imprimirPacotesViagem(cadastro.obterTodos());
 
-        PacoteViagem pacoteViagemEncontrado = cadastro.buscarPorDescricao("Foz do Iguacu (20 noites)");
+        Pacote pacoteViagemEncontrado = cadastro.buscarPorDescricao("Foz do Iguacu (20 noites)");
         System.out.println();
         System.out.println("Buscando Pacote de Viagem por descricao:");
         System.out.println(pacoteViagemEncontrado);
 
     }
 
-    private static void imprimirPacotesViagem(List<PacoteViagem> pacoteViagems) {
-        for (PacoteViagem pacoteViagem : pacoteViagems) {
+    private static void imprimirPacotesViagem(List<? extends Pacote> pacoteViagems) {
+        for (Pacote pacoteViagem : pacoteViagems) {
             System.out.println(pacoteViagem);
         }
     }

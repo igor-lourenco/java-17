@@ -2,54 +2,59 @@ package com.java17._10_collectionsFramework.list.desafio;
 
 import java.util.*;
 
-public class CadastroPacoteViagem {
+public class CadastroPacoteViagem<T extends Pacote> {
 
-    private List<PacoteViagem> pacoteViagens = new ArrayList<>();
+    private List<T> pacotesList = new ArrayList<>();
 
-    public void adicionar(String descricao, double precoDiaria){
-        var novoPacoteViagem = new PacoteViagem(descricao, precoDiaria);
+    public void adicionar(T obj) throws Exception {
 
-        if(this.pacoteViagens.contains(novoPacoteViagem)){
-            throw new IllegalArgumentException("Pacote de Viagem ja foi inserido");
+        for (T pacoteViagem : this.pacotesList) {
+            if (pacoteViagem.getDescricao().equals(obj.getDescricao())
+                && Double.valueOf(pacoteViagem.getPrecoPorPessoa()).equals(obj.getPrecoPorPessoa())) {
+                throw new IllegalArgumentException("Pacote de Viagem ja foi inserido");
+
+            }
         }
-        this.pacoteViagens.add(novoPacoteViagem);
+
+        this.pacotesList.add(obj);
     }
 
-    public List<PacoteViagem> obterTodos(){
-        return this.pacoteViagens;
+    public List<T> obterTodos() {
+        return this.pacotesList;
     }
 
-    public void ordenar(){
-        Collections.sort(pacoteViagens);
+    public void ordenar() {
+        Collections.sort(pacotesList);
     }
 
-    public void ordenarPorPrecoDecrescente(){
-        Collections.sort(this.pacoteViagens, new PrecoComparator().reversed());
+    public void ordenarPorPrecoDecrescente() {
+        Collections.sort(this.pacotesList, new PrecoComparator<T>().reversed());
 
     }
 
-    public void removerPorDescricao(String descricao){
-        Iterator<PacoteViagem> iterator = this.pacoteViagens.iterator();
-        List<PacoteViagem> pacoteViagensEncontrado = new ArrayList<>();
+    public void removerPorDescricao(String descricao) {
+        Iterator<T> iterator = this.pacotesList.iterator();
+        List<T> pacoteViagensEncontrado = new ArrayList<>();
 
-        while (iterator.hasNext()){
-            PacoteViagem pacoteViagem = iterator.next();
+        while (iterator.hasNext()) {
+            T pacoteViagem = iterator.next();
 
-            if(pacoteViagem.getDescricao().equals(descricao)){
+            if (pacoteViagem.getDescricao().equals(descricao)) {
                 System.out.println("DEBUG: Pacote de viagem encontrado: " + descricao);
                 pacoteViagensEncontrado.add(pacoteViagem);
             }
         }
 
-        if(!this.pacoteViagens.removeAll(pacoteViagensEncontrado)) System.out.println("Nenhum Pacote de Viagem removido");
+        if (!this.pacotesList.removeAll(pacoteViagensEncontrado))
+            System.out.println("Nenhum Pacote de Viagem removido");
     }
 
-    public PacoteViagem buscarPorDescricao(String descricao){
-        PacoteViagem pacoteViagemEncontrado = null;
+    public T buscarPorDescricao(String descricao) {
+        T pacoteViagemEncontrado = null;
 
-        for (PacoteViagem pacoteViagem : this.pacoteViagens) {
-            if(pacoteViagem.getDescricao().equals(descricao)){
-                 pacoteViagemEncontrado = pacoteViagem;
+        for (T pacoteViagem : this.pacotesList) {
+            if (pacoteViagem.getDescricao().equals(descricao)) {
+                pacoteViagemEncontrado = pacoteViagem;
             }
         }
 
