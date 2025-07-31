@@ -28,16 +28,22 @@ public class Principal {
         numeros.add(83);
 
         System.out.println();
+        System.out.println("Ordenando os numeros:");
         ordemNatural(numeros);
 
         System.out.println();
+        System.out.println("Ordenando usando a interface Comparable:");
         ordemNaturalHoteis(cadastroHotel);
     }
 
     private static void ordemNaturalHoteis(CadastroHotel cadastroHotel) {
-        Hotel[] hoteis = cadastroHotel.obterTodosComArray();
-        Collections.sort(numeros, Comparator.reverseOrder());
-        System.out.println(numeros);
+        cadastroHotel.ordenar();
+        Iterator<Hotel> hotelItr = cadastroHotel.obterTodosComList().iterator();
+
+        while (hotelItr.hasNext()){
+            System.out.println(hotelItr.next());
+        }
+
     }
 
     private static void ordemNatural( List<Integer> numeros) {

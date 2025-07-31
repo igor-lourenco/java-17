@@ -2,7 +2,7 @@ package com.java17._10_collectionsFramework.list.vector.agencia;
 
 import java.util.Objects;
 
-public class Hotel {
+public class Hotel implements Comparable<Hotel> {
 
     private String nome;
     private String cidade;
@@ -41,17 +41,18 @@ public class Hotel {
         this.precoDiaria = precoDiaria;
     }
 
+
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         Hotel hotel = (Hotel) object;
-        return Objects.equals(nome, hotel.nome) && Objects.equals(cidade, hotel.cidade);
+        return Objects.equals(nome, hotel.nome);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, cidade);
+        return Objects.hash(nome);
     }
 
     @Override
@@ -62,5 +63,28 @@ public class Hotel {
         sb.append(", precoDiaria=").append(precoDiaria);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public int compareTo(Hotel hotel) {
+//      Comparando usando String em vez de double
+        return getNome().compareTo(hotel.getNome());
+
+
+//        Melhorando mais ainda a implementação
+//        return Double.compare(getPrecoDiaria(), hotel.getPrecoDiaria());
+
+//        Melhorando implementação
+//        return Double.valueOf(getPrecoDiaria()).compareTo(hotel.getPrecoDiaria());
+
+
+//        Implementação
+//        if(this.getPrecoDiaria() < hotel.getPrecoDiaria()){
+//            return -1;
+//        } else if(this.getPrecoDiaria() > hotel.getPrecoDiaria()){
+//            return 1;
+//        }
+//
+//        return 0;
     }
 }

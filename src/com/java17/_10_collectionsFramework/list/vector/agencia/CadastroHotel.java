@@ -3,10 +3,7 @@ package com.java17._10_collectionsFramework.list.vector.agencia;
 import com.java17._10_collectionsFramework.list.arrayList.exception.HotelJaExistenteException;
 import com.java17._10_collectionsFramework.list.arrayList.exception.HotelNaoEncontradoException;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 
 public class CadastroHotel {
 
@@ -65,6 +62,10 @@ public class CadastroHotel {
 
     public List<Hotel> obterTodosComList (){
         return hoteis.stream().toList();
+    }
+
+    public void ordenar(){
+        Collections.sort(this.hoteis);
     }
 
 }
