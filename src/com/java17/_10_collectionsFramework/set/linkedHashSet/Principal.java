@@ -1,18 +1,17 @@
-package com.java17._10_collectionsFramework.set.treeSet;
+package com.java17._10_collectionsFramework.set.linkedHashSet;
 
-import com.java17._10_collectionsFramework.set.treeSet.modelo.Contato;
+import com.java17._10_collectionsFramework.set.hashSet.modelo.Contato;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class Principal {
 
     public static void main(String[] args) {
 
-//      TODO: TreeSet -> garante a ordenação natural dos elementos usando a interface Comparable ou Comparator
-//       mas é a menos performática entre HashSet e LinkedHashSet
-        Set<Contato> contatos = new TreeSet<>();
-//        Set<Contato> contatos = new TreeSet<>(new IdadeContatoComparator());
+//      TODO: LinkedHashSet -> garante a ordem de inserção dos elementos
+//       mas é um pouco menos performático que o HashSet
+        Set<Contato> contatos = new LinkedHashSet<>();
 
         Contato contato1 = new Contato("Maria", "maria@email.com", 40);
         Contato contato2 = new Contato("Joao", "joao@email.com", 30);
@@ -23,21 +22,16 @@ public class Principal {
         Contato contato6 = new Contato("Rose", "rose@email.com", 25);
 
         System.out.println("------------");
-        System.out.println("Adicionando no Set e ja ordenando...");
-
         contatos.add(contato1);
         contatos.add(contato2);
         contatos.add(contato3);
         contatos.add(contato4);
         contatos.add(contato5);
 
-//        contatos.add(null); // TreeSet não aceita null
-
-        System.out.println("------------");
-        System.out.println("Contatos ja ordenados: ");
+        System.out.println();
+        System.out.println("Contatos ordenados pela ordem de insercao: ");
         for (Contato contato : contatos) {
             System.out.println(contato);
         }
-
     }
 }

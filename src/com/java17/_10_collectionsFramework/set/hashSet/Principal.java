@@ -12,6 +12,7 @@ public class Principal {
 
 //        imprimirNumerosComHashSet();
 
+//      TODO: HashSet -> Não garante a ordem dos elementos mas é mais performático que TreeSet e LinkedHashSet
         Set<Contato> contatos = new HashSet<>();
 
         Contato contato1 = new Contato("Maria", "maria@email.com", 40);
