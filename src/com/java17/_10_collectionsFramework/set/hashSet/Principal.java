@@ -10,6 +10,33 @@ public class Principal {
 
     public static void main(String[] args) {
 
+//        imprimirNumerosComHashSet();
+
+        Set<Contato> contatos = new HashSet<>();
+
+        Contato contato1 = new Contato("Maria", "maria@email.com", 40);
+        Contato contato2 = new Contato("Joao", "joao@email.com", 30);
+        Contato contato3 = new Contato("Jose", "jose@email.com", 25);
+        Contato contato4 = new Contato("Ana", "ana@email.com", 25);
+        Contato contato5 = new Contato("Rosa", "rosa@email.com", 25);
+
+        Contato contato6 = new Contato("Rose", "rose@email.com", 25);
+
+        System.out.println("------------");
+        contatos.add(contato1);
+        contatos.add(contato2);
+        contatos.add(contato3);
+        contatos.add(contato4);
+        contatos.add(contato5);
+
+        System.out.println("------------");
+        System.out.println("Contem: " + contatos.contains(contato6));
+
+
+
+        }
+
+    private static void imprimirNumerosComHashSet() {
         Set<Integer> numeros = new HashSet<>();
 
         System.out.println("Adicionado: " + numeros.add(10));
@@ -26,18 +53,5 @@ public class Principal {
         while (iterator.hasNext()){
             System.out.println("Numeros: " + iterator.next());
         }
-
-
-        System.out.println();
-        System.out.println("Contatos:");
-        Contato contato1 = new Contato("Maria", "maria@email.com", 40);
-        Contato contato2 = new Contato("Joao", "joao@email.com", 30);
-        Contato contato3 = new Contato("Jose", "jose@email.com", 25);
-        Contato contato4 = new Contato("Ana", "ana@email.com", 25);
-
-        System.out.println("Contato: " + contato1.hashCode());
-        System.out.println("Contato: " + contato2.hashCode());
-        System.out.println("Contato: " + contato3.hashCode());
-        System.out.println("Contato: " + contato4.hashCode());
     }
 }
