@@ -4,7 +4,7 @@ import com.java17._10_collectionsFramework.comercial.modelo.Cliente;
 import com.java17._10_collectionsFramework.comercial.modelo.ItemVenda;
 import com.java17._10_collectionsFramework.comercial.modelo.Venda;
 
-public class Principal {
+public class PrincipalColecoesNaoModifcaveis {
 
     public static void main(String[] args) {
 
