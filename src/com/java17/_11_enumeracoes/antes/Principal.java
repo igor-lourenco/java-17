@@ -7,7 +7,7 @@ public class Principal {
         Pedido pedido = new Pedido();
         pedido.setNomeCliente("Joao da Silva");
 
-        pedido.setStatus(StatusPedido.RASCUNHO);
+        pedido.setStatus(StatusPedido.EMITIDO);
         pedido.setOrigem(OrigemPedido.ONLINE);
 
         System.out.println("Status do pedido: " + pedido.getStatus());
