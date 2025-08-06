@@ -7,12 +7,17 @@ public class Principal {
         Pedido pedido = new Pedido();
         pedido.setNomeCliente("Joao da Silva");
 
-        pedido.setStatus(StatusPedido.FATURADO);
+        pedido.setStatus(StatusPedido.RASCUNHO);
         pedido.setOrigem(OrigemPedido.ONLINE);
 
-        System.out.println(pedido.getStatus());
-        System.out.println(pedido.getOrigem());
+        System.out.println("Status do pedido: " + pedido.getStatus());
+        System.out.println("Origem do pedido: " + pedido.getOrigem());
 
         System.out.println("Tempo de entrega em horas: " + pedido.getTempoEntregaEmHoras());
+
+        pedido.setValorTotal(90);
+        pedido.cancelar();
+
+        System.out.println("Status do pedido: " + pedido.getStatus());
     }
 }

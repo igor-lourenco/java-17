@@ -3,6 +3,7 @@ package com.java17._11_enumeracoes.antes;
 public class Pedido {
 
     private String nomeCliente;
+    private double valorTotal;
     private StatusPedido status = StatusPedido.RASCUNHO;
     private OrigemPedido origem = OrigemPedido.BALCAO;
 
@@ -31,7 +32,28 @@ public class Pedido {
         this.origem = origem;
     }
 
-    public int getTempoEntregaEmHoras(){
-        return this.status.getTempoEntregaEmHoras();
+    public int getTempoEntregaEmHoras() {
+        try {
+            return this.status.getTempoEntregaEmHoras();
+        }catch (NullPointerException e){
+            System.out.println("DEBUG: Pedido nao tem tempo de entrega");
+            return 0;
+        }
+    }
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    public void cancelar() {
+        if (getStatus().podeMudarParaCancelado(getValorTotal())) {
+            this.status = StatusPedido.CANCELADO;
+        }else{
+            throw new IllegalStateException("Pedido nao pode ser cancelado");
+        }
     }
 }
