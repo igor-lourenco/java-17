@@ -4,6 +4,8 @@ public class Principal {
 
     public static void main(String[] args) {
 
+        ServicoCancelamentoPedido servico = new ServicoCancelamentoPedido();
+
         Pedido pedido = new Pedido();
         pedido.setNomeCliente("Joao da Silva");
 
@@ -16,7 +18,7 @@ public class Principal {
         System.out.println("Tempo de entrega em horas: " + pedido.getTempoEntregaEmHoras());
 
         pedido.setValorTotal(90);
-        pedido.cancelar();
+        servico.cancelar(pedido, TipoUsuario.CLIENTE);
 
         System.out.println("Status do pedido: " + pedido.getStatus());
     }
