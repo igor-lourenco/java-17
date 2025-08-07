@@ -75,5 +75,15 @@ public class Principal {
         System.out.println("Apenas o primeiro sobrenome do nome '" + nome10 + "': " + nome10.substring(index, end));
 
 
+//      TODO: métodos lastIndexOf e substring
+        String nome11 = "Joao Silva Sousa";
+        int lastIndex = nome11.lastIndexOf(" ") + 1; // 10 + 1
+
+
+        System.out.println();
+        System.out.println(">>> lastIndexOf, substring");
+        System.out.println("Apenas o ultimo sobrenome do nome '" + nome11 + "': " + nome11.substring(lastIndex));
+
+
     }
 }
