@@ -85,5 +85,60 @@ public class Principal {
         System.out.println("Apenas o ultimo sobrenome do nome '" + nome11 + "': " + nome11.substring(lastIndex));
 
 
+//      TODO: método toUpperCase
+        String nome12 = "Joao Silva Sousa";
+
+        System.out.println();
+        System.out.println(">>> toUpperCase");
+        System.out.println("Nome em maiusculo '" + nome12 + "': " + nome12.toUpperCase());
+
+
+//      TODO: método toLowerCase
+        String nome13 = "Joao Silva Sousa";
+
+        System.out.println();
+        System.out.println(">>> toLowerCase");
+        System.out.println("Nome em maiusculo '" + nome13 + "': " + nome13.toLowerCase());
+
+
+//      TODO: método strip
+        String nome14 = "\n     Joao Silva Sousa     ";
+
+        System.out.println();
+        System.out.println(">>> strip");
+        System.out.println("Nome com todos os espacos em branco iniciais e finais removidos. '>" + nome14 + "<': "
+            + "[" + nome14.strip() + "]");
+
+
+//      TODO: método stripLeading
+        String nome15 = "\n     Joao Silva Sousa     ";
+
+        System.out.println();
+        System.out.println(">>> stripLeading");
+        System.out.println("Nome com todos os espacos em branco iniciais removidos. '>" + nome15 + "<': "
+            + "["+ nome15.stripLeading() + "]");
+
+
+//      TODO: método stripTrailing
+        String nome16 = "\n     Joao Silva Sousa     ";
+
+        System.out.println();
+        System.out.println(">>> stripTrailing");
+        System.out.println("Nome com todos os espacos em branco finais removidos. '>" + nome16 + "<': "
+            + "["+ nome16.stripTrailing() + "]");
+
+
+//      TODO: método replace
+        String nome17 = "Joao Silva Sousa Costa de Oliveira Machado dos Santos";
+
+        System.out.println();
+        System.out.println(">>> replace");
+        System.out.println("Substituindo a letra 'a' por '* do nome'. '" + nome17 + "': "
+            + "[" +nome17.replace("a", "*") + "]");
+
+
+
+
+
     }
 }
