@@ -137,8 +137,46 @@ public class Principal {
             + "[" +nome17.replace("a", "*") + "]");
 
 
+//      TODO: métodos toUpperCase, strip e replace para formatar o nome
+        String nome18 = "\n    Joao da Silva de Sousa Costa de Oliveira Machado dos Santos    \n";
+
+        System.out.println();
+        System.out.println(">>> formatando nome");
+        System.out.println("Formatando nome'. '[" + nome18 + "]': "
+            + "[" + formatarNome(nome18, "da", "de", "dos") + "]");
+
+
+//      TODO: método repeat para preencher a esquerda o codigo
+        int codigo = 123;
+
+        System.out.println();
+        System.out.println(">>> formatando codigo");
+        System.out.println("Formatando codigo preenchendo a esquerda'. '[" + codigo + "]': "
+            + "[" + preencherAEsquerda(String.valueOf(codigo), '0', 10) + "]");
 
 
 
+
+
+    }
+
+
+    private static String formatarNome(String nome18, String... preposicoesParaExclusao) {
+        String nomeFormatado = nome18.toUpperCase().strip();
+
+        for (String preposicao : preposicoesParaExclusao) {
+            nomeFormatado = nomeFormatado
+                .replace(" " + preposicao.toUpperCase() + " ", " ");
+        }
+
+        return nomeFormatado;
+    }
+
+    private static String preencherAEsquerda(String texto, char character, int tamanhoTotal) {
+        if(texto.length() > tamanhoTotal) return texto;
+
+        return String.valueOf(character)
+            .repeat(tamanhoTotal - texto.length())
+            .concat(texto);
     }
 }
