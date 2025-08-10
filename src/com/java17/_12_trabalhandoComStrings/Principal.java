@@ -1,5 +1,7 @@
 package com.java17._12_trabalhandoComStrings;
 
+import java.util.Arrays;
+
 public class Principal {
 
     public static void main(String[] args) {
@@ -153,6 +155,17 @@ public class Principal {
         System.out.println(">>> formatando codigo");
         System.out.println("Formatando codigo preenchendo a esquerda'. '[" + codigo + "]': "
             + "[" + preencherAEsquerda(String.valueOf(codigo), '0', 10) + "]");
+
+
+//      TODO: método split com expressões regulares (regex)
+        String email = "joao@gmail.com";
+
+        String regex = "[@.]"; // para recortar usando os separadores '@' e o '.'
+        String[] partesDoEmail = email.split(regex);
+
+        System.out.println();
+        System.out.println(">>> Usando split com expressoes regulares (regex) para recortar usando os separadores '@' e o '.'");
+        System.out.println("Recortando o email'. '[" + email + "]': " + Arrays.toString(partesDoEmail));
 
 
 
