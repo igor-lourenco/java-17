@@ -31,6 +31,9 @@ public class FormatandoDataEHora {
         formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT, FormatStyle.MEDIUM);
         System.out.println("\nFormatando LocalDateTime com enum FormatStyle SHORT na data: " + formatter.format(dataEHora));
 
+        formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.MEDIUM);
+        System.out.println("Formatando LocalDateTime com enum FormatStyle MEDIUM na data: " + formatter.format(dataEHora));
+
         formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG, FormatStyle.MEDIUM);
         System.out.println("Formatando LocalDateTime com enum FormatStyle LONG na data: " + formatter.format(dataEHora));
 
