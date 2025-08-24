@@ -34,8 +34,8 @@ public class ContaCorrente {
             this.valor = valor;
 
             // atributos da classe superior
-            saldo = saldo.subtract(valor);
-            transacoes.add(this);
+            ContaCorrente.this.saldo = ContaCorrente.this.saldo.subtract(valor);
+            ContaCorrente.this.transacoes.add(this);
         }
 
         public String getDescricao() {
