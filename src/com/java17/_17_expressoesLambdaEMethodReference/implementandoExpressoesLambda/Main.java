@@ -27,10 +27,7 @@ public class Main {
 //        };
 
 
-        List<Cliente> clientes = cadastroCliente.consultar((Cliente objeto) -> {
-            boolean resultado = objeto.getIdade() > 40;
-            return resultado;
-        });
+        List<Cliente> clientes = cadastroCliente.consultar(cliente -> cliente.getIdade() > 40);
 
 
         for (Cliente cliente : clientes) {
