@@ -13,14 +13,25 @@ public class Main {
         cadastroCliente.adicionar(new Cliente("Joaquina", 45));
         cadastroCliente.adicionar(new Cliente("Josefina", 25));
 
-        Filtro<Cliente> filtro = new Filtro<Cliente>() {
-            @Override
-            public boolean avaliar(Cliente cliente) {
-                return cliente.getIdade() > 40;
-            }
-        };
+//        Filtro<Cliente> filtro = new Filtro<Cliente>() {
+//            @Override
+//            public boolean avaliar(Cliente cliente) {
+//                return cliente.getIdade() > 40;
+//            }
+//        };
 
-        List<Cliente> clientes = cadastroCliente.consultar(filtro);
+
+//        Filtro<Cliente> filtro = (Cliente objeto) -> {
+//            boolean resultado = objeto.getIdade() > 40;
+//            return resultado;
+//        };
+
+
+        List<Cliente> clientes = cadastroCliente.consultar((Cliente objeto) -> {
+            boolean resultado = objeto.getIdade() > 40;
+            return resultado;
+        });
+
 
         for (Cliente cliente : clientes) {
             System.out.printf("%s - %d%n", cliente.getNome(), cliente.getIdade());
