@@ -1,7 +1,6 @@
 package com.java17._17_expressoesLambdaEMethodReference.implementandoExpressoesLambda;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class CadastroCliente {
@@ -9,7 +8,7 @@ public class CadastroCliente {
     private final List<Cliente> clientes = new ArrayList<>();
 
     public List<Cliente> getClientes() {
-        return Collections.unmodifiableList(clientes);
+        return clientes;
     }
 
     public void adicionar(Cliente cliente) {

@@ -35,5 +35,14 @@ public class Main {
         }
 
 
+        List<Cliente> clientes2 = cadastroCliente.getClientes();
+        clientes2.sort((c1, c2) -> Integer.compare(c1.getIdade(), c2.getIdade()));
+
+
+        System.out.println("-----------------");
+        System.out.println("Ordenando pela idade:");
+        for (Cliente cliente : clientes2) {
+            System.out.printf("%s - %d%n", cliente.getNome(), cliente.getIdade());
+        }
     }
 }
