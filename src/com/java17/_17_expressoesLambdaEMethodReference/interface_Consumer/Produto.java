@@ -57,6 +57,10 @@ public class Produto {
         return quantidade;
     }
 
+    public void inativar() {
+        this.status = Status.INATIVO;
+    }
+
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;

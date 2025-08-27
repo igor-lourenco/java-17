@@ -2,6 +2,7 @@ package com.java17._17_expressoesLambdaEMethodReference.interface_Consumer;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 public class IterandoEmColecoesComForEach {
@@ -26,5 +27,15 @@ public class IterandoEmColecoesComForEach {
 
         System.out.println("\nZerando a quantidade de estoque e depois imprimir:");
         produtos.forEach(zerandoEstoque.andThen(imprimir));
+
+
+        System.out.println("---------------------------");
+        System.out.println("Referenciando métodos de uma instância particular");
+        List<Produto> produtos1 = new ArrayList<>(produtos);
+
+        var servicoInativar = new ServicoInativacaoProduto();
+        produtos1.forEach(servicoInativar::inativar);
+
+        produtos1.forEach(System.out::println);
     }
 }
