@@ -5,6 +5,10 @@ import java.util.Objects;
 
 public class Produto {
 
+    public Produto(String nome) {
+        this.nome = nome;
+    }
+
     public enum Status{
         ATIVO, INATIVO
     }

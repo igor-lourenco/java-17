@@ -26,5 +26,14 @@ public class Main {
 
         System.out.printf("Convertendo int para String: %s", texto);
 
+
+        System.out.println("\n---------------------------");
+        System.out.println("Referenciando construtores");
+        Function<String, Produto> function1 = Produto::new;
+
+        Produto produto1 = function1.apply("Arroz");
+        System.out.println(produto1);
+
+
     }
 }
