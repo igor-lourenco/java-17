@@ -1,8 +1,7 @@
 package com.java17._18_optional.ciaaerea;
 
-import com.java17._18_optional.ciaaerea.exceptions.ReservaNaoEncontradaException;
-
 import java.util.Objects;
+import java.util.Optional;
 
 public class ServicoDeBagagem {
 
@@ -22,11 +21,9 @@ public class ServicoDeBagagem {
 
 //      TODO: aqui poderia ter outras regras de negócio
 
-        Reserva reserva = servicoDeReserva.buscar(codigoReserva);
+        Optional<Reserva> reservaOptional = servicoDeReserva.buscar(codigoReserva);
 
-        if (reserva == null) throw new ReservaNaoEncontradaException("Reserva não encontrada: " + codigoReserva);
-
-        reserva.adicionarBagagens(quantidadeBagagens);
+        reservaOptional.get().adicionarBagagens(quantidadeBagagens);
 
 
 
