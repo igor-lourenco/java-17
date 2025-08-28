@@ -1,5 +1,7 @@
 package com.java17._18_optional.ciaaerea;
 
+import com.java17._18_optional.ciaaerea.exceptions.ReservaNaoEncontradaException;
+
 import java.util.function.Consumer;
 
 public class Main2 {
@@ -29,6 +31,18 @@ public class Main2 {
             .ifPresentOrElse(
                 reserva -> reserva.adicionarBagagens(10),
                 () -> System.out.println("\nReserva 28A887 não encontrada"));
+
+
+        System.out.println("------------------------------------------");
+        System.out.println("Testando e filtrando valor com Predicate");
+
+        Reserva reserva1 = servicoDeReserva.buscar("28A888")
+            .filter(reserva -> reserva.getQuantBagagens() > 0)
+            .orElseThrow(() ->
+                new ReservaNaoEncontradaException("Reserva não encontrada ou quantidade de bagagens zerado"));
+
+        System.out.println("\nBuscando Reserva usando filter: " + reserva1);
+
 
     }
 }
