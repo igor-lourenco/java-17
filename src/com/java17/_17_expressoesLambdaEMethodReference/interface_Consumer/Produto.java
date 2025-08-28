@@ -57,6 +57,10 @@ public class Produto {
         return quantidade;
     }
 
+    public void ativar() {
+        this.status = Status.ATIVO;
+    }
+
     public void inativar() {
         this.status = Status.INATIVO;
     }

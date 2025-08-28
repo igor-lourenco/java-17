@@ -6,4 +6,9 @@ public class ServicoInativacaoProduto {
         System.out.println("Inativando: " + produto.getNome());
         produto.inativar();
     }
+
+    public static void processar(Produto produto){
+        System.out.println("Ativando: " + produto.getNome());
+        produto.ativar();
+    }
 }
