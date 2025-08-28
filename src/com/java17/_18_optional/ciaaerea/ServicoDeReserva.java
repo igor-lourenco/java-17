@@ -1,6 +1,7 @@
 package com.java17._18_optional.ciaaerea;
 
 import java.util.*;
+import java.util.function.Supplier;
 
 public class ServicoDeReserva {
 
@@ -16,6 +17,11 @@ public class ServicoDeReserva {
         if(!reservaAdicionada){
             throw new RuntimeException(String.format("Reserva %s já existe", reserva.getCodigo()));
         }
+    }
+
+
+    public Reserva buscar(String codigo, Supplier<Reserva> supplierNaoExiste){
+        return buscar(codigo).orElseGet(supplierNaoExiste);
     }
 
     public Optional<Reserva> buscar(String codigo){
