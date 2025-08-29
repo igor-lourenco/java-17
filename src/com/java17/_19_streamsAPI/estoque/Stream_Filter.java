@@ -18,5 +18,14 @@ public class Stream_Filter {
 
         Stream<Produto> produtosInativos = produtosEmEstoque.filter(Produto::isInativo);
 
+
+        System.out.println();
+        System.out.println("Usando forEach -> Operação terminal");
+        produtosInativos.forEach(produto -> {
+            System.out.println("produto= " + produto);
+            produto.ativar();
+            System.out.println("produto= " + produto + "\n");
+        });
+
     }
 }
