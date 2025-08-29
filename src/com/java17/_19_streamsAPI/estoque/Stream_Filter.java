@@ -18,7 +18,6 @@ public class Stream_Filter {
 
         Stream<Produto> produtosInativos = produtosEmEstoque.filter(Produto::isInativo);
 
-
         System.out.println();
         System.out.println("Usando forEach -> Operação terminal");
         produtosInativos.forEach(produto -> {
@@ -26,6 +25,24 @@ public class Stream_Filter {
             produto.ativar();
             System.out.println("produto= " + produto + "\n");
         });
+
+
+        System.out.println("-----------------------------------------------");
+        System.out.println("Criando pipeline com encadeamento de operações");
+        System.out.println("------------------------------------------------");
+
+        List<Produto> produtos2 = produtos;
+
+        System.out.println();
+
+        produtos2.stream()
+            .filter(Produto::temEstoque)
+            .filter(Produto::isAtivo)
+            .forEach(produto -> {
+                System.out.println("Inativando produto: " + produto);
+                produto.inativar();
+                System.out.println(produto + "\n");
+            });
 
     }
 }
