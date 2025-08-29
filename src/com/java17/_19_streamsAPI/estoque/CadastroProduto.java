@@ -42,7 +42,13 @@ public class CadastroProduto {
                 fabricanteDiPrima, Produto.Status.INATIVO, categoriaOutros, categoriaChurrasco),
 
             new Produto("Café", new BigDecimal("5"), 0,
-                fabricanteDiPrima, Produto.Status.INATIVO, categoriaOutros)
+                fabricanteDiPrima, Produto.Status.INATIVO, categoriaOutros),
+
+            new Produto("Arroz", new BigDecimal("15"), 10,
+                fabricanteDiPrima, Produto.Status.ATIVO, categoriaOutros),
+
+            new Produto("Feijão", new BigDecimal("10"), 10,
+                fabricanteDiPrima, Produto.Status.ATIVO, categoriaOutros)
         );
     }
 
