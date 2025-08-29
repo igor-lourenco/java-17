@@ -1,6 +1,7 @@
 package com.java17._18_optional.ciaaerea;
 
 import java.util.Objects;
+import java.util.Optional;
 
 public class Reserva {
 
@@ -34,6 +35,10 @@ public class Reserva {
 
     public Passageiro getPassageiro() {
         return passageiro;
+    }
+
+    public Optional<Passageiro> getPassageiroOptional() {
+        return Optional.of(passageiro);
     }
 
     public int getQuantBagagens() {
