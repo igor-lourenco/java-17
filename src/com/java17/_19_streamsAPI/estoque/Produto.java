@@ -11,6 +11,10 @@ public class Produto {
         ATIVO, INATIVO
     }
 
+    public Produto() {
+        this.fabricante = null;
+    }
+
     private String nome;
     private BigDecimal preco;
     private int quantidade;
