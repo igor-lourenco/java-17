@@ -30,25 +30,25 @@ public class CadastroProduto {
                 fabricanteDiPrima, Produto.Status.INATIVO, categoriaCarnes,categoriaChurrasco),
 
             new Produto("Suco", new BigDecimal("23"), 20,
-                fabricanteDiPrima, Produto.Status.INATIVO, categoriaBebidas),
+                fabricanteCocaCola, Produto.Status.INATIVO, categoriaBebidas),
 
             new Produto("Cerveja", new BigDecimal("14"), 110,
-                fabricanteDiPrima, Produto.Status.INATIVO, categoriaBebidas, categoriaChurrasco),
+                fabricanteCorona, Produto.Status.INATIVO, categoriaBebidas, categoriaChurrasco),
 
             new Produto("Refri", new BigDecimal("20"), 15,
-                fabricanteDiPrima, Produto.Status.INATIVO, categoriaBebidas),
+                fabricanteCocaCola, Produto.Status.INATIVO, categoriaBebidas),
 
             new Produto("Sal", new BigDecimal("5"), 0,
                 fabricanteDiPrima, Produto.Status.INATIVO, categoriaOutros, categoriaChurrasco),
 
             new Produto("Café", new BigDecimal("5"), 0,
-                fabricanteDiPrima, Produto.Status.INATIVO, categoriaOutros),
+                fabricanteCisne, Produto.Status.INATIVO, categoriaOutros),
 
             new Produto("Arroz", new BigDecimal("15"), 10,
-                fabricanteDiPrima, Produto.Status.ATIVO, categoriaOutros),
+                fabricanteCisne, Produto.Status.ATIVO, categoriaOutros),
 
             new Produto("Feijão", new BigDecimal("10"), 10,
-                fabricanteDiPrima, Produto.Status.ATIVO, categoriaOutros)
+                fabricanteCisne, Produto.Status.ATIVO, categoriaOutros)
         );
     }
 
