@@ -10,10 +10,11 @@ public class Stream_map {
         List<Produto> produtos = cadastroProduto.obterTodos();
 
         produtos.stream()
-            .peek(p -> System.out.println("------------------------------------------------------"))
-            .peek(p -> System.out.printf("Produto: %s, Fabricante: %s, tem estoque? %b%n", p.getNome(), p.getFabricante().nome(), p.temEstoque()))
+//            .peek(p -> System.out.println("------------------------------------------------------"))
+//            .peek(p -> System.out.printf("Produto: %s, Fabricante: %s, tem estoque? %b%n", p.getNome(), p.getFabricante().nome(), p.temEstoque()))
             .filter(Produto::temEstoque)
             .map(Produto::getFabricante)
+            .distinct() // pra evitar elementos duplicados, a classe tem qu ter o equals implementado para poder diferenciar
             .forEach(System.out::println);
     }
 }
