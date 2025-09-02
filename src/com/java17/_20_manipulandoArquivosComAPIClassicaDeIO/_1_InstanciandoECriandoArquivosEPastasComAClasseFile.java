@@ -3,7 +3,7 @@ package com.java17._20_manipulandoArquivosComAPIClassicaDeIO;
 import java.io.File;
 import java.io.IOException;
 
-public class InstanciandoECriandoArquivosEPastasComAClasseFile {
+public class _1_InstanciandoECriandoArquivosEPastasComAClasseFile {
 
     public static void main(String[] args) throws IOException {
 
