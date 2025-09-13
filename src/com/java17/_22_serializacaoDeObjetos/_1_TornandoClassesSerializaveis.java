@@ -5,7 +5,7 @@ import com.java17._22_serializacaoDeObjetos.modelo.Funcionario;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class TornandoClassesSerializaveis {
+public class _1_TornandoClassesSerializaveis {
 
     public static void main(String[] args) {
 
