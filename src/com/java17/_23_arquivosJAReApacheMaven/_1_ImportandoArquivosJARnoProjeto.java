@@ -2,6 +2,7 @@ package com.java17._23_arquivosJAReApacheMaven;
 
 import com.works.crm.api.CadastroCliente;
 import com.works.crm.api.Cliente;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class _1_ImportandoArquivosJARnoProjeto {
         List<Cliente> clientes = cadastroCliente.consultar(c -> c.getIdade() > 40);
 
         for (Cliente cliente : clientes) {
-            System.out.printf("%s - %d%n", cliente.getNome(), cliente.getIdade());
+            System.out.printf("%s - %d%n", StringUtils.abbreviate(cliente.getNome(), 15), cliente.getIdade());
         }
 
     }

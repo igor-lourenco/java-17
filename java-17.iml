@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="crm-api" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.18.0" level="project" />
   </component>
 </module>
