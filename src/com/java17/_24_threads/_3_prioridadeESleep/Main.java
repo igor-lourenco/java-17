@@ -1,4 +1,4 @@
-package com.java17._24_threads._3_PrioridadeESleep;
+package com.java17._24_threads._3_prioridadeESleep;
 
 public class Main {
 
