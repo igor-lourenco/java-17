@@ -1,4 +1,4 @@
-package com.java17._24_threads.introducao;
+package com.java17._24_threads._1_introducao;
 
 public class Main {
 

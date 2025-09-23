@@ -1,10 +1,10 @@
-package com.java17._24_threads.introducao;
+package com.java17._24_threads._2_estadosDaThread;
 
-public class Thread1 extends Thread {
+public class Runnable1 implements Runnable {
 
     private final char c;
 
-    public Thread1(char c) {
+    public Runnable1(char c) {
         this.c = c;
     }
 
@@ -15,7 +15,7 @@ public class Thread1 extends Thread {
     @Override
     public void run() {
 
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 200; i++){
             System.out.print(c);
             if(i % 10 == 0){
                 System.out.println();
