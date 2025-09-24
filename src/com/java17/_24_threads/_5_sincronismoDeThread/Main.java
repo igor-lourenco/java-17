@@ -28,7 +28,7 @@ public class Main implements Runnable {
         }
     }
 
-    private void saqueDaConta(int valor) {
+    private synchronized void saqueDaConta(int valor) {
         if (conta.getSaldo() >= valor) {
             System.out.println(Thread.currentThread().getName() + " está indo sacar o dinheiro");
             conta.saque(valor);
