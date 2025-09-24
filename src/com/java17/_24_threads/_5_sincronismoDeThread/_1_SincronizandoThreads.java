@@ -2,13 +2,13 @@ package com.java17._24_threads._5_sincronismoDeThread;
 
 import com.java17._24_threads._5_sincronismoDeThread.modelo.Conta;
 
-public class Main implements Runnable {
+public class _1_SincronizandoThreads implements Runnable {
 
     private Conta conta = new Conta();
 
     public static void main(String[] args) throws InterruptedException {
 
-        Main threadMain = new Main();
+        _1_SincronizandoThreads threadMain = new _1_SincronizandoThreads();
 
         Thread t1 = new Thread(threadMain, "T1");
         Thread t2 = new Thread(threadMain, "T2");
