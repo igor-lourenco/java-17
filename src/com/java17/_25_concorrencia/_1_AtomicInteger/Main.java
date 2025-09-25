@@ -1,4 +1,4 @@
-package com.java17._25_concorrencia.AtomicInteger;
+package com.java17._25_concorrencia._1_AtomicInteger;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
