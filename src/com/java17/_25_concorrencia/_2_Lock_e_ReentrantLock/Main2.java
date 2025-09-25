@@ -1,8 +1,9 @@
 package com.java17._25_concorrencia._2_Lock_e_ReentrantLock;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Main {
+public class Main2 {
 
     public static void main(String[] args) {
         ReentrantLock lock = new ReentrantLock();
@@ -30,11 +31,15 @@ public class Main {
 
         @Override
         public void run() {
-            lock.lock(); // sempre vai bloquear trecho do código para ser executado por apenas uma thread por vez
             try {
+                lock.tryLock(2, TimeUnit.SECONDS); // tenta obter o bloqueio por 2 segundos, para executar trecho do código apenas uma thread por vez
+
+                if (lock.isHeldByCurrentThread()) {
+                    System.out.printf("%nThread: %s pegou o LOCK%n%n", nome);
+
+                }
 
                 System.out.printf("%nThread: %s entrou em uma sessão crítica%n%n", nome);
-
                 System.out.printf(">>> Tem %d Threads esperando na fila%n", lock.getQueueLength());
                 System.out.printf("Thread: %s vai esperar 2seg...%n", nome);
                 Thread.sleep(2000);
@@ -43,7 +48,9 @@ public class Main {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             } finally {
-                lock.unlock(); // desbloqueia
+                if (lock.isHeldByCurrentThread()) {
+                    lock.unlock(); // desbloqueia
+                }
             }
         }
     }
