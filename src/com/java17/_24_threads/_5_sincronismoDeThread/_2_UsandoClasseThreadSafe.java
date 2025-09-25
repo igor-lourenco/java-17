@@ -15,20 +15,20 @@ public class _2_UsandoClasseThreadSafe {
         new Thread(threadSafe::removeFirst).start();
 
     }
-}
 
-class ClasseThreadSafe {
+    static class ClasseThreadSafe {
 
-    private final List<String> nomes = new ArrayList<>();
+        private final List<String> nomes = new ArrayList<>();
 
-    public synchronized boolean add(String nome){
-        return this.nomes.add(nome);
-    }
+        public synchronized boolean add(String nome) {
+            return this.nomes.add(nome);
+        }
 
-    public synchronized void removeFirst(){
-        if(!this.nomes.isEmpty()){
-            System.out.println(Thread.currentThread().getName());
-            System.out.println(this.nomes.remove(0));
+        public synchronized void removeFirst() {
+            if (!this.nomes.isEmpty()) {
+                System.out.println(Thread.currentThread().getName());
+                System.out.println(this.nomes.remove(0));
+            }
         }
     }
 }
