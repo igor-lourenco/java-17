@@ -1,4 +1,4 @@
-package com.java17._25_concorrencia._11_Executor_CompletableFuture_getAndJoind;
+package com.java17._25_concorrencia._11_CompletableFuture_getAndJoind;
 
 import java.util.concurrent.*;
 
