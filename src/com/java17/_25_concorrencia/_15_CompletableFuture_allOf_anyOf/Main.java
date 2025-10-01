@@ -1,4 +1,4 @@
-package com.java17._25_concorrencia._CompletableFuture_allOf_anyOf;
+package com.java17._25_concorrencia._15_CompletableFuture_allOf_anyOf;
 
 import com.java17._25_concorrencia._14_CompletableFuture_EncadeandoChamadas.LojaService;
 import com.java17._25_concorrencia._14_CompletableFuture_EncadeandoChamadas.Orcamento;
