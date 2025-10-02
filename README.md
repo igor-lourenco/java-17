@@ -51,3 +51,8 @@ nome1 == nome3 // false
 nome2 == nome4 // false
 ```
 ![string_pool](https://github.com/igor-lourenco/java-17/blob/main/src/com/java17/_12_trabalhandoComStrings/Pool_de_strings.png)
+
+##
+### Tipos de classes aninhadas
+
+![classes_aninhadas](https://github.com/igor-lourenco/java-17/blob/main/src/com/java17/_16_classesAninhadas/Tipos_classes_aninhadas.png)
