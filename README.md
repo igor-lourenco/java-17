@@ -1,6 +1,7 @@
 
 ### Palavras reservadas
-
+- [Definição das palavras reservas](Palavras_Reservadas.md#)
+  
 ![palavras_reservadas](https://github.com/igor-lourenco/java-17/blob/main/images/palavras_reservadas.png)
 
 ##
