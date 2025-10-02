@@ -25,3 +25,29 @@
 Java Mission Control (JMC) — Recomendado para NMT
 VisualVM — Mais leve e intuitiva
 ```
+##
+### Strings
+
+Strings literais são automaticamente internadas:
+```
+String nome1 = "Joao";
+String nome2 = "Joao";
+```
+
+Ambas as variáveis nome1 e nome2 apontam para o mesmo objeto no String Pool.
+```
+nome1 == nome2 // true
+```
+
+Strings criadas com new não vão para o pool automaticamente:
+```
+String nome3 = new String("Joao");
+String nome4 = new String("Joao");
+```
+
+nome3 e nome4 são novos objetos na heap, diferente do que está no pool:
+```
+nome1 == nome3 // false
+nome2 == nome4 // false
+```
+![string_pool](https://github.com/igor-lourenco/java-17/blob/main/src/com/java17/_12_trabalhandoComStrings/Pool_de_strings.png)
